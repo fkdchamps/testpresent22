@@ -1,0 +1,123 @@
+/****************************************/
+/* import de police googlefonts du site */
+/****************************************/
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+
+/* ************************************************** */
+/* ****************** MOBILE ************************ */
+/* ************************************************** */
+
+/****************************/
+/* géneralités remarquables */
+/****************************/
+$color-bk-light0: #383838;
+$color-bk-light1: #c0c0c0;
+$color-bk-light2: #e7e7e7;
+$color-bk-light3: #f2f2f2;
+$color-bk-light4: #ffffff;
+$colortext1: #000000;
+$colortext2: #686868;
+$colortext3: #ffffff;
+$colortexttertc: #287262;
+$color-prim: #9356DC;
+$color-sec: #FF79DA;
+$color-tert: #99E2D0;
+
+*{
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;        
+}
+
+body{
+    width: 100%;
+}
+
+
+/***********************************/
+/************ header ***************/
+/***********************************/
+
+.head{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 100%;
+    height: auto;
+    background-color: $color-bk-light3;
+    .head__logo{
+        width: 100%;
+        padding: 1.4em 1em 0.5em 1em;
+        margin-top: 0px;
+        /* text-align: center; */
+        align-self: center;
+        background-color: $color-bk-light4;
+        box-shadow: 0px 0.5px 3px $color-bk-light1;
+        z-index: 10;
+        img{
+            width: 50%;
+        }
+    }
+}
+
+.head__geo{
+    text-align: center;
+    margin-top: 0px;
+    line-height: 3em;
+    background-color: $color-bk-light2;
+    span{
+        margin-left: 12px;
+    }
+}
+
+.head .title{
+    width: 66%;
+    text-align: center;
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 2px;    
+}
+
+.parag{
+    width: auto;
+    font-size: larger;
+    text-align: center;
+    font-weight: 300;
+}
+
+.head__nav{
+    margin-top: 22px;
+    margin-bottom: 70px;
+    align-self: center;
+    .headerbutton{
+        background: linear-gradient(-10deg, $color-prim, $color-sec);
+        padding: 0.9em 1.1em 0.9em 1.1em;
+        border-radius: 1.5em;
+        color: $color-bk-light4;
+        font-weight: 500;
+        text-decoration: none;
+        box-shadow: 0px 4px 5px $color-bk-light1;        
+    }
+}
+
+.info{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-bk-light4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

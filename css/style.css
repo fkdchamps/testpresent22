@@ -10,19 +10,22 @@
 /****************************/
 /* géneralités remarquables */
 /****************************/
-* {
+body {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  letter-spacing: -0.3px;
 }
 
-body {
+h1 {
+  font-size: x-large;
+}
+
+body, .head, main, footer {
   width: 100%;
 }
 
-.title {
-  font-size: x-large;
-  font-weight: bold;
+a {
+  text-decoration: none;
 }
 
 /***********************************/
@@ -32,32 +35,31 @@ body {
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  width: 100%;
-  height: auto;
+  /* height: auto; */
   background-color: #f2f2f2;
 }
-
-.head__logo {
+.head .head__logo {
   width: 100%;
-  padding: 1.4em 1em 0.5em 1em;
+  padding: 1.4em 0em 0.5em 0em;
   margin-top: 0px;
   text-align: center;
-  background-color: white;
-  box-shadow: 0px 0.5px 3px silver;
+  background-color: #ffffff;
+  box-shadow: 0px 0.5px 3px #c0c0c0;
   z-index: 10;
 }
-.head__logo img {
+.head .head__logo img {
   width: 50%;
 }
 
 .head__geo {
+  width: 100%;
   text-align: center;
   margin-top: 0px;
   line-height: 3em;
   background-color: #e7e7e7;
 }
 .head__geo span {
-  margin-left: 15px;
+  margin-left: 12px;
 }
 
 .head .title {
@@ -83,9 +85,171 @@ body {
 .head__nav .headerbutton {
   background: linear-gradient(-10deg, #9356DC, #FF79DA);
   padding: 0.9em 1.1em 0.9em 1.1em;
-  border-radius: 1.5em;
-  color: white;
+  color: #ffffff;
   font-weight: 500;
   text-decoration: none;
-  box-shadow: 0px 4px 5px silver;
+  box-shadow: 0.5px 2px 5px #c0c0c0;
+  border-radius: 17px;
+  border-radius: 1.5em;
+}
+
+.info {
+  width: 90%;
+  margin: auto;
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.info__buttons {
+  width: 100%;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  margin-bottom: 50px;
+}
+.info__buttons .infobutton {
+  box-shadow: 0.5px 2px 5px #c0c0c0;
+  border-radius: 17px;
+  display: flex;
+  width: 100%;
+  height: 70px;
+  border: none;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 0;
+}
+.info__buttons .infobutton .roundnum {
+  display: flex;
+  width: 24px;
+  line-height: 24px;
+  justify-content: center;
+  align-content: center;
+  background-color: #9356DC;
+  border-radius: 12px;
+  margin-left: -12px;
+}
+.info__buttons .infobutton .roundnum__num {
+  color: #ffffff;
+}
+.info__buttons .infobutton .fas {
+  width: 70px;
+  font-size: 1.3rem;
+  color: #686868;
+}
+
+.options {
+  padding-top: 45px;
+  padding-bottom: 45px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* height: auto; */
+  background-color: #f2f2f2;
+}
+.options > * {
+  width: 90%;
+  margin: auto;
+}
+.options__cards {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+  height: auto;
+}
+
+.card {
+  box-shadow: 0.5px 2px 5px #c0c0c0;
+  border-radius: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  width: 100%;
+  height: auto;
+  min-height: 240px;
+  margin: auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.card__pic {
+  position: relative;
+  width: auto;
+  height: 175px;
+  overflow: hidden;
+  border-radius: 17px 17px 0 0;
+}
+.card__pic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.card__pic .sticker {
+  margin: 0;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 6px 12px 6px 12px;
+  border-radius: 3px;
+  background-color: #99E2D0;
+  color: #287262;
+}
+.card__body {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__body .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.card__body .text p, .card__body .text h3 {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.card__body .far {
+  font-size: 1.5em;
+}
+
+.foot {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #383838;
+  color: #ffffff;
+  margin-top: 0;
+}
+.foot > * {
+  width: 90%;
+  margin: auto;
+}
+.foot .foot__title {
+  font-family: "Shrikhand";
+  font-size: 0.8em;
+}
+.foot a {
+  color: #ffffff;
+}
+.foot ul {
+  padding: 0;
+  list-style: none;
+  line-height: 1.8em;
+}
+.foot ul i {
+  width: 15px;
+  margin-right: 20px;
 }/*# sourceMappingURL=style.css.map */

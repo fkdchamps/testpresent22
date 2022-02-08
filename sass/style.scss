@@ -25,13 +25,37 @@ $color-prim: #9356DC;
 $color-sec: #FF79DA;
 $color-tert: #99E2D0;
 
-*{
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;        
+@mixin default-shadnrad {
+    box-shadow: 0.5px 2px 5px $color-bk-light1;
+    border-radius: 17px;
+}
+
+@mixin most-block-display {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    
+    /* height: auto; */
+    background-color: $color-bk-light3;
 }
 
 body{
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: -0.3px;
+         
+}
+
+h1{
+    font-size: x-large;
+}
+
+body, .head, main, footer{
     width: 100%;
+}
+
+a{
+    text-decoration: none;
 }
 
 
@@ -40,18 +64,12 @@ body{
 /***********************************/
 
 .head{
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    width: 100%;
-    height: auto;
-    background-color: $color-bk-light3;
+    @include most-block-display;
     .head__logo{
         width: 100%;
-        padding: 1.4em 1em 0.5em 1em;
+        padding: 1.4em 0em 0.5em 0em;
         margin-top: 0px;
-        /* text-align: center; */
-        align-self: center;
+        text-align: center;
         background-color: $color-bk-light4;
         box-shadow: 0px 0.5px 3px $color-bk-light1;
         z-index: 10;
@@ -62,6 +80,7 @@ body{
 }
 
 .head__geo{
+    width: 100%;
     text-align: center;
     margin-top: 0px;
     line-height: 3em;
@@ -93,31 +112,171 @@ body{
     .headerbutton{
         background: linear-gradient(-10deg, $color-prim, $color-sec);
         padding: 0.9em 1.1em 0.9em 1.1em;
-        border-radius: 1.5em;
+        
         color: $color-bk-light4;
         font-weight: 500;
         text-decoration: none;
-        box-shadow: 0px 4px 5px $color-bk-light1;        
+        @include default-shadnrad;
+        border-radius: 1.5em;      
     }
 }
 
 .info{
-    margin-top: 20px;
+    width: 90%;
+    margin: auto;
+    margin-top: 35px;
     display: flex;
     flex-direction: column;
     background-color: $color-bk-light4;
+        
 }
 
+.info__buttons{
+    width: 100%;
+    height:280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    margin-bottom: 50px;
+    
+    .infobutton{
+        @include default-shadnrad;
+        display: flex;
+        width: 100%;
+        height: 70px;
+        border: none;
+        align-items: center;
+        background-color: $color-bk-light3;
+        padding: 0;        
+        .roundnum{
+            display: flex;            
+            width: 24px;
+            line-height: 24px;
+            justify-content: center;
+            align-content: center;
+            background-color: $color-prim;
+            border-radius: 12px; 
+            margin-left: -12px;
+            &__num{
+                color: $colortext3;
+            }
+        }
+        .fas{
+            width: 70px;
+            font-size: 1.3rem;
+            color: $colortext2;
+        }
+    }
+}
 
+.options{
+    &>*{
+        width: 90%;
+        margin: auto;
+    }
+    padding-top: 45px;
+    padding-bottom: 45px;
+    @include most-block-display;
+    &__cards{
+        margin-top: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: auto;
+        height: auto;
 
+    
+    }
+}
 
-
-
-
-
-
-
-
-
-
+.card{
+    @include default-shadnrad;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: $color-bk-light4;
+    width: 100%;
+    height: auto;
+    min-height: 240px;
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    &__pic{
+        position: relative;
+        width: auto;
+        height: 175px;
+        overflow: hidden;
+        border-radius: 17px 17px 0 0;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center; 
+        }
+        .sticker{
+            margin: 0;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 6px 12px 6px 12px;
+            border-radius: 3px;
+            background-color: $color-tert;
+            color: $colortexttertc;
+        }
+    }
+    
+    &__body{
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        & p, h3{
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
+    }
+    .far{
+        font-size: 1.5em;
+    }
+}
+}
+.foot{
+    &>*{
+        width: 90%;
+        margin: auto;
+    }
+    padding-top: 12px;
+    padding-bottom: 12px; 
+    background-color: $color-bk-light0;
+    color: $colortext3;
+    margin-top: 0;
+    .foot__title{  
+        font-family: "Shrikhand";
+        font-size: 0.8em;
+        
+    }
+    a{
+        color: $colortext3;
+    }
+    ul{
+        padding: 0;
+        list-style: none;
+        line-height: 1.8em;
+        i{
+            width: 15px;
+            margin-right: 20px;
+        }
+    }
+    
+}
 

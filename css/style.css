@@ -20,7 +20,7 @@ h1 {
   font-size: x-large;
 }
 
-body, .head, main, footer {
+body, header, main, footer {
   width: 100%;
 }
 
@@ -34,8 +34,6 @@ a {
 .head {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* height: auto; */
   background-color: #f2f2f2;
 }
 .head .head__logo {
@@ -63,7 +61,7 @@ a {
 }
 
 .head .title {
-  width: 66%;
+  width: 100%;
   text-align: center;
   align-self: center;
   margin-top: 20px;
@@ -93,6 +91,9 @@ a {
   border-radius: 1.5em;
 }
 
+/***********************************/
+/************ infos ****************/
+/***********************************/
 .info {
   width: 90%;
   margin: auto;
@@ -101,9 +102,7 @@ a {
   flex-direction: column;
   background-color: #ffffff;
 }
-
-.info__buttons {
-  width: 100%;
+.info .info__buttons {
   height: 280px;
   display: flex;
   flex-direction: column;
@@ -111,18 +110,19 @@ a {
   align-content: center;
   margin-bottom: 50px;
 }
-.info__buttons .infobutton {
+.info .info__buttons .infobutton {
   box-shadow: 0.5px 2px 5px #c0c0c0;
   border-radius: 17px;
   display: flex;
   width: 100%;
+  margin: auto;
   height: 70px;
   border: none;
   align-items: center;
   background-color: #f2f2f2;
   padding: 0;
 }
-.info__buttons .infobutton .roundnum {
+.info .info__buttons .infobutton .roundnum {
   display: flex;
   width: 24px;
   line-height: 24px;
@@ -132,22 +132,23 @@ a {
   border-radius: 12px;
   margin-left: -12px;
 }
-.info__buttons .infobutton .roundnum__num {
+.info .info__buttons .infobutton .roundnum__num {
   color: #ffffff;
 }
-.info__buttons .infobutton .fas {
+.info .info__buttons .infobutton .fas {
   width: 70px;
   font-size: 1.3rem;
   color: #686868;
 }
 
+/***********************************/
+/********* menu d'options***********/
+/***********************************/
 .options {
   padding-top: 45px;
   padding-bottom: 45px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* height: auto; */
   background-color: #f2f2f2;
 }
 .options > * {
@@ -155,7 +156,6 @@ a {
   margin: auto;
 }
 .options__cards {
-  margin-top: 15px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -163,9 +163,9 @@ a {
   width: 90%;
   margin: auto;
   height: auto;
+  margin-top: 22px;
 }
-
-.card {
+.options .card {
   box-shadow: 0.5px 2px 5px #c0c0c0;
   border-radius: 17px;
   display: flex;
@@ -177,24 +177,35 @@ a {
   min-height: 240px;
   margin: auto;
   margin-top: 8px;
-  margin-bottom: 8px;
-}
-.card__pic {
+  margin-bottom: 15px;
   position: relative;
-  width: auto;
-  height: 175px;
+}
+.options .card a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.options .card__pic {
+  position: relative;
+  width: 100%;
+  height: 195px;
   overflow: hidden;
   border-radius: 17px 17px 0 0;
 }
-.card__pic img {
+.options .card__pic img {
   width: 100%;
-  height: 100%;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -56%);
 }
-.card__pic .sticker {
+.options .card__pic .sticker {
   margin: 0;
   position: absolute;
   top: 15px;
@@ -204,25 +215,25 @@ a {
   background-color: #99E2D0;
   color: #287262;
 }
-.card__body {
+.options .card__body {
   width: 90%;
   margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.card__body .text {
+.options .card__body .text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.card__body .text p, .card__body .text h3 {
+.options .card__body .text p, .options .card__body .text h3 {
   margin-top: 4px;
   margin-bottom: 4px;
 }
-.card__body .far {
+.options .card__body .far {
   font-size: 1.5em;
 }
 
@@ -237,7 +248,7 @@ a {
   width: 90%;
   margin: auto;
 }
-.foot .foot__title {
+.foot__title {
   font-family: "Shrikhand";
   font-size: 0.8em;
 }
@@ -252,4 +263,120 @@ a {
 .foot ul i {
   width: 15px;
   margin-right: 20px;
+}
+
+/*****************************************/
+/******** VERSION TABLETTE****************/
+/*****************************************/
+@media all and (min-width: 769px) and (max-width: 992px) {
+  .head .head__logo img {
+    width: 25%;
+  }
+
+  .info .info__buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    height: auto;
+    width: auto;
+  }
+  .info .info__buttons .infobutton {
+    height: 55px;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin-right: 0%;
+    margin-left: 12px;
+    margin-bottom: 20px;
+  }
+  .info .info__buttons .infobutton fas {
+    width: 35px;
+  }
+  .info .info__buttons .infobutton strong {
+    margin-right: 15px;
+  }
+
+  .options__cards {
+    justify-content: space-between;
+  }
+  .options__cards .card {
+    width: 45%;
+  }
+  .options__cards .card img {
+    width: 110%;
+  }
+}
+/* ************************************************ */
+/* ********     VERSION DESKTOP     *************** */
+/* ************************************************ */
+@media all and (min-width: 992px) {
+  .head .head__logo {
+    text-align: left;
+  }
+  .head .head__logo img {
+    width: 17%;
+    margin-left: 5%;
+  }
+
+  .head__geo {
+    text-align: left;
+  }
+  .head__geo i {
+    margin-left: 5%;
+  }
+
+  .head .title {
+    width: auto;
+    padding: 0;
+    margin-left: 5%;
+    align-self: flex-start;
+  }
+
+  .parag {
+    text-align: left;
+    margin: 5%;
+  }
+
+  .info .info__buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    height: auto;
+    width: 100%;
+  }
+  .info .info__buttons .infobutton {
+    height: 55px;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin-right: 0%;
+    margin-left: 12px;
+    margin-bottom: 20px;
+  }
+  .info .info__buttons .infobutton fas {
+    width: 35px;
+  }
+  .info .info__buttons .infobutton strong {
+    margin-right: 15px;
+  }
+
+  .options__cards {
+    justify-content: space-between;
+    justify-items: space-between;
+  }
+  .options__cards .card {
+    margin: 0;
+    width: 23%;
+    height: 255px;
+  }
+  .options__cards .card .card__pic {
+    height: 165px;
+  }
+  .options__cards .card img {
+    width: 132%;
+  }
 }/*# sourceMappingURL=style.css.map */

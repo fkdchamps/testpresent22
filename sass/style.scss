@@ -26,7 +26,6 @@ $color-sec: #FF79DA;
 $color-tert: #99E2D0;
 
 
-
 @mixin default-shadnrad {
     box-shadow: 0.5px 2px 5px $color-bk-light1;
     border-radius: 17px;
@@ -38,10 +37,26 @@ $color-tert: #99E2D0;
     background-color: $color-bk-light3;
 }
 
+@mixin rndbutton {
+    display:inline-block;
+    background: linear-gradient(-10deg, #9356DC, #FF79DA);
+    padding: auto;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+    width: 100%;
+    
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0.5px 2px 5px #c0c0c0;
+    border-radius: 17px;
+    border-radius: 1.5em;
+}
+
 body{
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.2px;
 }
 
 h1{
@@ -54,15 +69,17 @@ body, header, main, footer{
 
 a{
     text-decoration: none;
+    color: inherit;
 }
 
-/***********************************/
-/************ header ***************/
-/***********************************/
+/*************************************/
+/************ HEADER *****************/
+/*************************************/
 
 .head{
     @include most-block-display;
-    .head__logo{
+    &__logo{
+        position: relative;
         width: 100%;
         padding: 1.4em 0em 0.5em 0em;
         margin-top: 0px;
@@ -72,53 +89,61 @@ a{
         z-index: 10;
         img{
             width: 50%;
+            
+        }
+        &__arrow{
+            position: absolute;
+            top:26px;
+            left: 25px;
+            font-size: 150%;
+        }
+    }
+    .head__geo{
+        width: 100%;
+        text-align: center;
+        margin-top: 0px;
+        line-height: 3em;
+        background-color: $color-bk-light2;
+        span{
+            margin-left: 12px;
+        }
+    }
+    .title{
+        width: 100%;
+        text-align: center;
+        align-self: center;
+        margin-top: 20px;
+        margin-bottom: 2px;    
+    }
+    .parag{
+        width: auto;
+        font-size: larger;
+        text-align: center;
+        font-weight: 300;
+    }
+    &__nav{
+        width: 55%;
+        text-align: center;
+        margin-top: 22px;
+        margin-bottom: 70px;
+        align-self: center;
+        .headerbutton{
+            @include rndbutton;      
         }
     }
 }
 
-.head__geo{
-    width: 100%;
-    text-align: center;
-    margin-top: 0px;
-    line-height: 3em;
-    background-color: $color-bk-light2;
-    span{
-        margin-left: 12px;
-    }
-}
+/**************************************/
+/************ MAIN ********************/
+/**************************************/
 
-.head .title{
-    width: 100%;
-    text-align: center;
-    align-self: center;
-    margin-top: 20px;
-    margin-bottom: 2px;    
-}
+/********************************/
+/************ pages picture******/
+/********************************/
 
-.parag{
-    width: auto;
-    font-size: larger;
-    text-align: center;
-    font-weight: 300;
-}
-
-.head__nav{
-    margin-top: 22px;
-    margin-bottom: 70px;
-    align-self: center;
-    .headerbutton{
-        background: linear-gradient(-10deg, $color-prim, $color-sec);
-        padding: 0.9em 1.1em 0.9em 1.1em;
-        color: $color-bk-light4;
-        font-weight: 500;
-        text-decoration: none;
-        @include default-shadnrad;
-        border-radius: 1.5em;      
-    }
-}
-/***********************************/
-/************ infos ****************/
-/***********************************/
+/*****************************/
+/**********info **************/
+/*****************************/
 .info{
     width: 90%;
     margin: auto;
@@ -164,9 +189,10 @@ a{
         }
     }    
 }
-/***********************************/
-/********* menu d'options***********/
-/***********************************/
+
+/******************************/
+/******* menu d'options********/
+/******************************/
 
 .options{
     &>*{
@@ -285,6 +311,123 @@ a{
     }
 }
 
+/**********************************/
+/********* menus des restos *******/
+/**********************************/
+
+#hdrlogo-pages{
+    box-shadow: none;
+}
+.page-picture{
+    width: 100%;
+    height: 250px;
+    position: relative;
+    img{
+        position: absolute;
+        object-fit: cover;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: auto;              
+    }
+}
+.pages-options{
+    &>*{
+        width: 90%;
+        margin: auto;
+    }
+    @include most-block-display;
+    position: relative;
+    top: -40px;
+    border-radius: 40px 40px 0px 0px;
+    padding-top: 25px;
+    padding-bottom: 30px;
+    margin-bottom: -40px;
+    .options__header{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size: 170%;
+        .title{
+            font-size: inherit;
+            font-family: "Shrikhand",sans-serif;
+            margin-bottom: 45px;
+        }
+    }
+    #all-parts{
+        >*{
+            margin-bottom: 35px;
+        }
+        #first-part{
+            width: 100%;
+        }
+        #second-part{
+            width: 100%;
+        }
+        #third-part{
+            width: 100%;
+        }  
+    }
+    .options--menus__part{
+        width: 2.5em;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding-bottom: 6px;
+        text-transform: uppercase;
+        border-bottom: 2px solid $color-tert;            
+    }
+    .info__buttons{
+        .infobutton--menus{
+            .card__body--menus{
+                background-color: $color-bk-light4;
+                @include default-shadnrad;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-content: baseline;
+                height: 70px;
+                margin-bottom: 15px;
+                .text{
+                    width: 75%;
+                    strong{
+                        margin: 0;
+                        margin-top: 10px;
+                    }
+                    p{
+                        margin: 0;
+                        margin-bottom: 10px;
+                        font-weight: 300;
+                        width: 100%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    margin-left: 5%;
+                }
+                .price{
+                    display: flex;
+                    flex-direction: column-reverse;
+                    font-weight: bold;
+                    margin-right: 5%;
+                }
+            }
+        }
+    }
+    .command{
+        width: 55%;
+        margin-top: 22px;
+        margin-bottom: 22px;
+        text-align: center;
+        .buttonrnd{
+            @include rndbutton;
+        }
+    }   
+}
+
 /*****************************************/
 /******** VERSION TABLETTE****************/
 /*****************************************/
@@ -297,6 +440,9 @@ a{
                 width: 25%;
             }
         }
+        &__nav{
+            width: 35%;
+        }
     }
     .info{
         & .info__buttons{
@@ -307,12 +453,9 @@ a{
             align-content: flex-start;
             height: auto;
             width: auto;
-            
             .infobutton {
-                
                 height: 55px;
                 max-width: max-content;
-                
                 margin-right: 0%;
                 margin-left: 12px;
                 margin-bottom: 20px;
@@ -321,12 +464,10 @@ a{
                 }
                 strong {
                     margin-right: 15px;
-                }   
+                }  
             }
         }
-        
     }
-
     .options{
         &__cards{
             justify-content: space-between;
@@ -336,8 +477,29 @@ a{
                     width: 110%;
                 }
             }
-
         }
+    }
+    .pages-options{
+        top: -5px;
+        margin-bottom: -5px;
+    }
+    #all-parts{
+        height: auto;
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: flex-start; 
+        #first-part, #second-part, #third-part{
+            max-width: 47%;
+            margin: auto;
+            height: auto;
+            margin-bottom: 30px;            
+        }
+    }
+    .command{
+        max-width: 35%;
     }
 }
 
@@ -350,14 +512,15 @@ a{
     .head{    
         .head__logo{
             text-align: left;
-            
             img{
                 width: 17%;
                 margin-left: 5%;
             }
         }
+        &__nav{
+            width: 25%;
+        }
     }
-
     .head__geo{
         text-align: left;
         i{
@@ -374,7 +537,6 @@ a{
         text-align: left;
         margin: 5%;
     }
-
     .info{
         & .info__buttons{
             display: flex;
@@ -387,7 +549,6 @@ a{
             .infobutton {
                 height: 55px;
                 max-width: max-content;
-                
                 margin-right: 0%;
                 margin-left: 12px;
                 margin-bottom: 20px;
@@ -401,7 +562,6 @@ a{
         }
         
     }
-
     .options{
         &__cards{
             justify-content: space-between;
@@ -418,6 +578,28 @@ a{
                 }
             }
         }
+    }
+    #all-parts{
+        height: auto;
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: flex-start;
+        #first-part, #second-part, #third-part{
+            max-width: 47%;
+            margin: auto;
+            height: auto;
+            margin-bottom: 30px;            
+        }
+    }
+    .pages-options{
+        top: 0px;
+        margin-bottom: 0px;
+    }
+    .command{
+        max-width: 25%;
     }
 }
 

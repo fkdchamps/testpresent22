@@ -5,13 +5,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
 
 
+
 /* ************************************************** */
 /* ****************** MOBILE ************************ */
 /* ************************************************** */
 
-/****************************/
-/* géneralités remarquables */
-/****************************/
+/* ************************** */
+/* *géneralités remarquables* */
+/* ************************** */
 $color-bk-light0: #383838;
 $color-bk-light1: #c0c0c0;
 $color-bk-light2: #e7e7e7;
@@ -63,7 +64,7 @@ h1{
     font-size: x-large;
 }
 
-body, header, main, footer{
+header, main, footer{
     width: 100%;
 }
 
@@ -71,6 +72,7 @@ a{
     text-decoration: none;
     color: inherit;
 }
+
 
 /*************************************/
 /************ HEADER *****************/
@@ -88,7 +90,7 @@ a{
         box-shadow: 0px 0.5px 3px $color-bk-light1;
         z-index: 10;
         img{
-            width: 50%;
+            width: 45%;
             
         }
         &__arrow{
@@ -146,8 +148,11 @@ a{
 /*****************************/
 .info{
     width: 90%;
-    margin: auto;
-    margin-top: 35px;
+    padding-left: 5%;
+    padding-right: 5%;
+    
+
+    padding-top: 35px;
     display: flex;
     flex-direction: column;
     background-color: $color-bk-light4;
@@ -284,16 +289,18 @@ a{
 }
 
 .foot{
+    
     &>*{
         width: 90%;
         margin: auto;
     }
     padding-top: 12px;
-    padding-bottom: 12px; 
+    padding-bottom: 50px;
+    
     background-color: $color-bk-light0;
     color: $colortext3;
     margin-top: 0;
-    &__title{  
+       &__title{  
         font-family: "Shrikhand";
         font-size: 0.8em;
     }
@@ -319,17 +326,26 @@ a{
     box-shadow: none;
 }
 .page-picture{
-    width: 100%;
-    height: 250px;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-width: 100%;
+    /* height: auto; */
+    /* max- */height: auto;
+    max-height: 55vw;
+    overflow: hidden;  
+    
     img{
-        position: absolute;
-        object-fit: cover;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         width: 100%;
-        height: auto;              
+        
+        object-fit: cover;
+        /* object-position: center; */
+        /* top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */
+        /* width: 100%; */
+        height: auto;
+                      
     }
 }
 .pages-options{
@@ -339,11 +355,11 @@ a{
     }
     @include most-block-display;
     position: relative;
-    top: -40px;
+    top: -15vw;
     border-radius: 40px 40px 0px 0px;
     padding-top: 25px;
     padding-bottom: 30px;
-    margin-bottom: -40px;
+    margin-bottom: -15vw;
     .options__header{
         display: flex;
         justify-content: space-between;
@@ -357,15 +373,22 @@ a{
     }
     #all-parts{
         >*{
+            height: 100%;
             margin-bottom: 35px;
         }
         #first-part{
+            display: flex;
+            flex-direction: column;
             width: 100%;
         }
         #second-part{
+            display: flex;
+            flex-direction: column;
             width: 100%;
         }
         #third-part{
+            display: flex;
+            flex-direction: column;
             width: 100%;
         }  
     }
@@ -379,7 +402,17 @@ a{
     }
     .info__buttons{
         .infobutton--menus{
+            position: relative;
+            a{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 10;
+            }
             .card__body--menus{
+                
                 background-color: $color-bk-light4;
                 @include default-shadnrad;
                 display: flex;
@@ -428,12 +461,17 @@ a{
     }   
 }
 
+
 /*****************************************/
 /******** VERSION TABLETTE****************/
 /*****************************************/
 
 @media all and (min-width: 769px) and (max-width: 992px) {
-
+    body{
+        width: 99%;
+        margin: auto;
+        background-color: $color-bk-light1;
+    }
     .head{
         .head__logo{
             img{
@@ -479,21 +517,23 @@ a{
             }
         }
     }
-    .pages-options{
-        top: -5px;
-        margin-bottom: -5px;
-    }
+    /* .pages-options{
+        
+        top: -44px;
+        margin-bottom: -44px;
+    } */
     #all-parts{
-        height: auto;
+        
+        height: 100%;
         width: 90%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
-        align-content: flex-start; 
+        align-items: flex-start;
+        
         #first-part, #second-part, #third-part{
-            max-width: 47%;
-            margin: auto;
+            max-width: 47%; 
             height: auto;
             margin-bottom: 30px;            
         }
@@ -509,12 +549,17 @@ a{
 
 @media all and (min-width: 992px){
     
+    body{
+        width: 80%;
+        margin: auto;
+        background-color: $color-bk-light1;
+    }
     .head{    
         .head__logo{
             text-align: left;
             img{
                 width: 17%;
-                margin-left: 5%;
+                margin-left: 10%;
             }
         }
         &__nav{
@@ -579,8 +624,12 @@ a{
             }
         }
     }
+    /* .pages-options{
+        top: -44px;
+        margin-bottom: -44px;
+    } */
     #all-parts{
-        height: auto;
+        height: 100%;
         width: 90%;
         display: flex;
         flex-direction: row;
@@ -589,15 +638,11 @@ a{
         align-content: flex-start;
         #first-part, #second-part, #third-part{
             max-width: 47%;
-            margin: auto;
             height: auto;
             margin-bottom: 30px;            
         }
     }
-    .pages-options{
-        top: 0px;
-        margin-bottom: 0px;
-    }
+    
     .command{
         max-width: 25%;
     }

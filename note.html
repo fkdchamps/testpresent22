@@ -1,22 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr"><!-- la langue par défaut du contenu de la page -->
-
+<html lang="fr">
 <head>
-    <meta charset="UTF-8"><!-- metadonnée de l'encodage du document en utf8 universel maintenant -->
-
-    <!-- éviter les surprises de device affichage -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- chargement des icones fontawesome compte et script-->
-    <script src="https://kit.fontawesome.com/306b4f83ee.js" crossorigin="anonymous"></script><!-- autre alternative possible avec use.fontawesome.com -->
-
-    <!-- declaration feuille de style normalize d'harmonisation du CSS par défaut sur tous les navigateurs -->
+    <script src="https://kit.fontawesome.com/306b4f83ee.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/normalize.css">
-
-    <!-- feuille de style principale de construction du site -->
     <link rel="stylesheet" href="css/style.css">
-
-    <title>Ohmyfood réservez le menu qui vous convient: La palette du goût</title>
+    <title>Ohmyfood: La note enchantée</title>
 </head>
 
 <body>
@@ -37,9 +27,10 @@
         <div class="pages-options">
             <div class="options__header">
                 <h1 class="title">La note enchantée</h1>
-                <i class="far fa-heart"></i>
+                <div class="like">
+                    <i class="far fa-heart"></i><i class="fas fa-heart"></i>
             </div>
-
+            </div> 
             <div id="all-parts">
                 <div id="first-part">
                     <p class="options--menus__part">Entrées</p>
@@ -51,8 +42,13 @@
                                     <strong>Ravioles de foie gras </strong>
                                     <p>Accompagnés de leur crème à la truffe</p>
                                 </div>
-                                <div class="price">
-                                    <p>25€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>25€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -64,8 +60,13 @@
                                     <strong>Caviar osciètre</strong>
                                     <p>Sur blini à la farine de blé noir</p>
                                 </div>
-                                <div class="price">
-                                    <p>35€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>35€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -77,8 +78,13 @@
                                     <strong>Homard et espuma de potiron</strong>
                                     <p>Mariné aux zestes d'orange</p>
                                 </div>
-                                <div class="price">
-                                    <p>20€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>20€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -90,8 +96,13 @@
                                     <strong>Foie gras de canard cuit entier</strong>
                                     <p>Confiture de figue et pain toasté</p>
                                 </div>
-                                <div class="price">
-                                    <p>35€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>35€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -108,8 +119,13 @@
                                     <strong>Noix de coquilles Saint-Jacques</strong>
                                     <p>Sur lit de purée de céleri-rave</p>
                                 </div>
-                                <div class="price">
-                                    <p>40€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>40€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -121,8 +137,13 @@
                                     <strong>Langoustine poêlée</strong>
                                     <p>Purée de patate douce</p>
                                 </div>
-                                <div class="price">
-                                    <p>35€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>35€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -134,8 +155,13 @@
                                     <strong>Mijoté de queue de boeuf </strong>
                                     <p>Et riz sauvage aux zestes de citron</p>
                                 </div>
-                                <div class="price">
-                                    <p>44€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>44€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -152,8 +178,13 @@
                                     <strong>Macaron noisette et chocolat</strong>
                                     <p>Glace au caramel brun et sel de Guérande</p>
                                 </div>
-                                <div class="price">
-                                    <p>18€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>18€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -165,8 +196,13 @@
                                     <strong>Baba au rhum revisité </strong>
                                     <p>Avec son coulis de citron</p>
                                 </div>
-                                <div class="price">
-                                    <p>22€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>22€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -178,8 +214,13 @@
                                     <strong>Tarte au citron meringuée  </strong>
                                     <p>Déstructurée</p>
                                 </div>
-                                <div class="price">
-                                    <p>23€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>23€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>

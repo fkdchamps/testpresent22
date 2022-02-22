@@ -1,22 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr"><!-- la langue par défaut du contenu de la page -->
-
+<html lang="fr">
 <head>
-    <meta charset="UTF-8"><!-- metadonnée de l'encodage du document en utf8 universel maintenant -->
-
-    <!-- éviter les surprises de device affichage -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- chargement des icones fontawesome compte et script-->
-    <script src="https://kit.fontawesome.com/306b4f83ee.js" crossorigin="anonymous"></script><!-- autre alternative possible avec use.fontawesome.com -->
-
-    <!-- declaration feuille de style normalize d'harmonisation du CSS par défaut sur tous les navigateurs -->
+    <script src="https://kit.fontawesome.com/306b4f83ee.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/normalize.css">
-
-    <!-- feuille de style principale de construction du site -->
     <link rel="stylesheet" href="css/style.css">
-
-    <title>Ohmyfood réservez le menu qui vous convient: La palette du goût</title>
+    <title>Ohmyfood: À la française</title>
 </head>
 
 <body>
@@ -37,7 +27,10 @@
         <div class="pages-options">
             <div class="options__header">
                 <h1 class="title">À la française</h1>
-                <i class="far fa-heart"></i>
+                
+                <div class="like">
+                    <i class="far fa-heart"></i><i class="fas fa-heart"></i>
+                </div>
             </div>
 
             <div id="all-parts">
@@ -51,8 +44,13 @@
                                     <strong>Tartare de poulpe acidulé</strong>
                                     <p>Aux zestes d'orange</p>
                                 </div>
-                                <div class="price">
-                                    <p>25€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>25€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -64,8 +62,13 @@
                                     <strong>Velouté de légumes d'antan</strong>
                                     <p>Carotte, panais, topinambour</p>
                                 </div>
-                                <div class="price">
-                                    <p>35€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>35€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -77,8 +80,13 @@
                                     <strong>Soupe à l'oignon</strong>
                                     <p>Revisitée</p>
                                 </div>
-                                <div class="price">
-                                    <p>20€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>20€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -95,8 +103,13 @@
                                     <strong>Coquilles Saint-Jacques</strong>
                                     <p>Accompagnées d'une purée de panais</p>
                                 </div>
-                                <div class="price">
-                                    <p>40€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>40€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -108,8 +121,13 @@
                                     <strong>Magret de canard</strong>
                                     <p>Et parmentier de pommes de terre</p>
                                 </div>
-                                <div class="price">
-                                    <p>35€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>35€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -121,8 +139,13 @@
                                     <strong>Pigeonneau d’Ille-et-Vilaine</strong>
                                     <p>Sur son lit de gnocchis aux légumes</p>
                                 </div>
-                                <div class="price">
-                                    <p>44€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>44€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -139,8 +162,13 @@
                                     <strong>Pétales de violettes glacés</strong>
                                     <p>Et purée de noisettes</p>
                                 </div>
-                                <div class="price">
-                                    <p>18€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>18€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -152,8 +180,13 @@
                                     <strong>Fondant au chocolat </strong>
                                     <p>Revisité</p>
                                 </div>
-                                <div class="price">
-                                    <p>22€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>22€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -165,8 +198,13 @@
                                     <strong>Millefeuille croustillant </strong>
                                     <p>Myrtilles et pâte d’amande</p>
                                 </div>
-                                <div class="price">
-                                    <p>23€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>23€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
                         </article>

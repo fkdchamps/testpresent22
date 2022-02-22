@@ -1,25 +1,16 @@
 <!DOCTYPE html>
-<html lang="fr"><!-- la langue par défaut du contenu de la page -->
-
+<html lang="fr">
 <head>
-    <meta charset="UTF-8"><!-- metadonnée de l'encodage du document en utf8 universel maintenant -->
-
-    <!-- éviter les surprises de device affichage -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- chargement des icones fontawesome compte et script-->
-    <script src="https://kit.fontawesome.com/306b4f83ee.js" crossorigin="anonymous"></script><!-- autre alternative possible avec use.fontawesome.com -->
-
-    <!-- declaration feuille de style normalize d'harmonisation du CSS par défaut sur tous les navigateurs -->
+    <script src="https://kit.fontawesome.com/306b4f83ee.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/normalize.css">
-
-    <!-- feuille de style principale de construction du site -->
     <link rel="stylesheet" href="css/style.css">
-
-    <title>Ohmyfood réservez le menu qui vous convient: La palette du goût</title>
+    <title>Ohmyfood: La palette du goût</title>
 </head>
 
 <body>
+    
     <header class="head" id="header">
         <div id="hdrlogo-pages" class="head__logo">
             <div class="head__logo__arrow">
@@ -36,8 +27,13 @@
 
         <div class="pages-options">
             <div class="options__header">
+                <!-- <div class="block-title"> -->
                 <h1 class="title">La palette du goût</h1>
-                <i class="far fa-heart"></i>
+                <!-- </div> -->
+                <div class="like">
+                    <i class="far fa-heart"></i><i class="fas fa-heart"></i>
+                </div>
+                
             </div>
 
             <div id="all-parts">
@@ -51,10 +47,16 @@
                                     <strong>Fricassée d'escargot</strong>
                                     <p>Au piment d'Espelette</p>
                                 </div>
-                                <div class="price">
-                                    <p>25€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>25€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
+                            
                         </article>
 
                         <article class="infobutton infobutton--menus">
@@ -64,10 +66,16 @@
                                     <strong>Foie gras de canard mi-cuit</strong>
                                     <p>Et ses copeaux de truffe noire</p>
                                 </div>
-                                <div class="price">
-                                    <p>35€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>35€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
+                            
                         </article>
 
                         <article class="infobutton infobutton--menus">
@@ -77,10 +85,16 @@
                                     <strong>Oeuf au plat</strong>
                                     <p>Assaisonné à la truffe sur lit de caviar</p>
                                 </div>
-                                <div class="price">
-                                    <p>20€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>20€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
+                            
                         </article>
                     </section>
                 </div>
@@ -95,10 +109,16 @@
                                     <strong>Filet de boeuf aux herbes</strong>
                                     <p>Accompagné de sa ribambelle de légumes</p>
                                 </div>
-                                <div class="price">
-                                    <p>40€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>40€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
+                            
                         </article>
 
                         <article class="infobutton infobutton--menus">
@@ -108,10 +128,16 @@
                                     <strong>Parmentier de queue de boeuf</strong>
                                     <p>À la truffe noire sur sa purée de panais</p>
                                 </div>
-                                <div class="price">
-                                    <p>35€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>35€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
+                            
                         </article>
 
                         <article class="infobutton infobutton--menus">
@@ -121,10 +147,16 @@
                                     <strong>Filet de turbot</strong>
                                     <p>Aux agrumes</p>
                                 </div>
-                                <div class="price">
-                                    <p>44€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>44€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
+                            
                         </article>
                     </section>
                 </div>
@@ -139,10 +171,16 @@
                                     <strong>Paris-Brest</strong>
                                     <p>Revisité</p>
                                 </div>
-                                <div class="price">
-                                    <p>18€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>18€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
+                            
                         </article>
 
                         <article class="infobutton infobutton--menus">
@@ -152,10 +190,16 @@
                                     <strong>Macaron au chocolat d'exception </strong>
                                     <p>Et glace à la vanille de Madagascar</p>
                                 </div>
-                                <div class="price">
-                                    <p>22€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>22€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
+                            
                         </article>
 
                         <article class="infobutton infobutton--menus">
@@ -165,10 +209,16 @@
                                     <strong>Mousse au chocolat </strong>
                                     <p>Au piment d'Espelette et à la truffe noire</p>
                                 </div>
-                                <div class="price">
-                                    <p>23€</p>
+                                <div class="price-end">
+                                    <div class="price">
+                                        <p>23€</p>
+                                    </div>
+                                    <div class="valid-plate">
+                                        <i class="fas fa-check"></i>
+                                    </div>
                                 </div>
                             </div>
+                            
                         </article>
                     </section>
                 </div>

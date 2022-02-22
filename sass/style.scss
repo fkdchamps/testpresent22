@@ -5,7 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
 
 
-
 /* ************************************************** */
 /* ****************** MOBILE ************************ */
 /* ************************************************** */
@@ -22,40 +21,52 @@ $colortext1: #000000;
 $colortext2: #686868;
 $colortext3: #ffffff;
 $colortexttertc: #287262;
-$color-prim: #9356DC;
+$color-prim: rgb(147, 86, 220);
 $color-sec: #FF79DA;
 $color-tert: #99E2D0;
 
 
-@mixin default-shadnrad {
+@mixin default-shadnrad{
     box-shadow: 0.5px 2px 5px $color-bk-light1;
     border-radius: 17px;
+    
 }
 
-@mixin most-block-display {
+@mixin most-block-display{
     display: flex;
     flex-direction: column;
     background-color: $color-bk-light3;
 }
 
-@mixin rndbutton {
+@mixin rndbutton{
     display:inline-block;
-    background: linear-gradient(-10deg, #9356DC, #FF79DA);
+    background: linear-gradient(-10deg, $color-prim, $color-sec);
     padding: auto;
     padding-top: 0.9em;
     padding-bottom: 0.9em;
     width: 100%;
-    
     color: #ffffff;
     font-weight: 500;
     text-decoration: none;
-    box-shadow: 0.5px 2px 5px #c0c0c0;
+    box-shadow: 0.5px 2px 5px $color-bk-light1;
     border-radius: 17px;
     border-radius: 1.5em;
+    &:hover{
+        background: linear-gradient(-10deg, #ac7fe4, #fd9fe3);
+        box-shadow: 2px 6px 2px $color-bk-light1;
+        font-weight: bold;
+        letter-spacing: 0.1px;
+    }
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body{
-    box-sizing: border-box;
+    width: 100%;
     font-family: "Roboto", sans-serif;
     letter-spacing: -0.2px;
 }
@@ -71,6 +82,111 @@ header, main, footer{
 a{
     text-decoration: none;
     color: inherit;
+}
+
+/* ****************************** */
+/* ******animations************** */
+/* ****************************** */
+@keyframes mouvim{
+    0%{
+        /* opacity:100%; */
+        /* z-index: 100; */
+        transform: /* translate(25%,20vh) */rotate(-0.1turn) scale(0.1);
+        /* -webkit-transform: rotate(-0.1turn) scale(0.1); */
+    }
+    50%{
+        /* opacity: 7%; */
+        transform: /* translate(-10%, -47vh) */rotate(1turn) scale(1.1);
+        /* -webkit-transform: rotate(1turn) scale(1.1); */
+        border-left: 35px solid $color-tert;
+        border-right: 35px solid $color-prim;
+    }
+    100%{
+        /* opacity:100%; */
+        /* z-index: 100; */
+        transform: /* translate(25%,20vh) */rotate(2turn) scale(0.1);
+        /* -webkit-transform: rotate(2turn) scale(0.1); */
+        border-left: 10px solid $color-tert;
+        border-right: 10px solid $color-prim;
+    }
+}
+
+@keyframes colorbk{
+    0%{
+        width: inherit;
+        opacity: 100;
+        z-index: 100;
+    }
+    20%{
+        opacity: 0.99;
+        z-index: 100;
+        background-color: $color-sec;
+    }
+    99%{
+        opacity: 0.94;
+        z-index: 100;
+        background-color: $color-bk-light4;
+    }
+    100%{
+        width: inherit;
+        opacity: 0%;
+
+    }
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+
+
+/* ************ */
+/**** loader ****/
+/* ************ */
+
+.loader{ 
+    width: 0%;
+    height: 100vh;
+    margin: 0;
+    background-color: $color-prim;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    opacity: 0%;  
+    animation-name: colorbk;
+    animation-duration: 3200ms;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    &__spinim{
+        position: relative;
+        margin: auto;
+        border-left: 10px solid $color-tert;
+        border-right: 10px solid $color-prim;
+        border-radius: 50%;
+        width: 350px;
+        height: 350px;
+        animation-name: mouvim;    
+        animation-duration: 3200ms;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-iteration-count: 1;
+        &__im{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
 }
 
 
@@ -90,8 +206,7 @@ a{
         box-shadow: 0px 0.5px 3px $color-bk-light1;
         z-index: 10;
         img{
-            width: 45%;
-            
+            width: 45%;   
         }
         &__arrow{
             position: absolute;
@@ -106,15 +221,18 @@ a{
         margin-top: 0px;
         line-height: 3em;
         background-color: $color-bk-light2;
+        &:hover{
+            background: rgb(147, 86, 220, 0.15);  
+        } 
         span{
             margin-left: 12px;
         }
     }
     .title{
-        width: 100%;
+        width: 80%;
         text-align: center;
         align-self: center;
-        margin-top: 20px;
+        margin-top: 28px;
         margin-bottom: 2px;    
     }
     .parag{
@@ -122,12 +240,14 @@ a{
         font-size: larger;
         text-align: center;
         font-weight: 300;
+        margin-top: 22px;
+        margin-bottom: 10px;
     }
     &__nav{
-        width: 55%;
+        width: 58%;
         text-align: center;
-        margin-top: 22px;
-        margin-bottom: 70px;
+        margin-top: 18px;
+        margin-bottom: 45px;
         align-self: center;
         .headerbutton{
             @include rndbutton;      
@@ -135,24 +255,16 @@ a{
     }
 }
 
-/**************************************/
-/************ MAIN ********************/
-/**************************************/
-
-/********************************/
-/************ pages picture******/
-/********************************/
 
 /*****************************/
 /**********info **************/
 /*****************************/
+
 .info{
-    width: 90%;
+    width: 100%;
     padding-left: 5%;
     padding-right: 5%;
-    
-
-    padding-top: 35px;
+    padding-top: 15px;
     display: flex;
     flex-direction: column;
     background-color: $color-bk-light4;
@@ -162,7 +274,8 @@ a{
         flex-direction: column;
         justify-content: space-around;
         align-content: center;
-        margin-bottom: 50px;
+        margin-bottom: 25px;
+        margin-top: 15px;
         .infobutton{
             @include default-shadnrad;
             display: flex;
@@ -172,7 +285,10 @@ a{
             border: none;
             align-items: center;
             background-color: $color-bk-light3;
-            padding: 0;    
+            padding: 0;
+            &:hover{
+                background: rgb(147, 86, 220, 0.15); 
+            } 
             .roundnum{
                 display: flex;            
                 width: 24px;
@@ -195,16 +311,17 @@ a{
     }    
 }
 
-/******************************/
-/******* menu d'options********/
-/******************************/
+
+/*******************************/
+/******* menu d'options ********/
+/*******************************/
 
 .options{
     &>*{
         width: 90%;
         margin: auto;
     }
-    padding-top: 45px;
+    padding-top: 40px;
     padding-bottom: 45px;
     @include most-block-display;
     &__cards{
@@ -230,13 +347,18 @@ a{
         margin-top: 8px;
         margin-bottom: 15px;
         position: relative;
+        &:hover{
+            box-shadow: 2px 6px 2px $color-bk-light1;
+            /* -webkit-transform: scale(1.03); */
+                    transform: scale(1.03);
+        }
         a{
             position: absolute;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
-            z-index: 10;
+            z-index: 10;  
         }
         &__pic{
             position: relative;
@@ -245,13 +367,13 @@ a{
             overflow: hidden;
             border-radius: 17px 17px 0 0;
             img{
+                
                 width: 100%;
-                height: auto;
                 object-fit: cover;
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%, -56%);         
+                transform: translate(-50%, -60%);       
             }
             .sticker{
                 margin: 0;
@@ -281,25 +403,46 @@ a{
                     margin-bottom: 4px;
                 }
             }
-            .far{
-                font-size: 1.5em;
-            }
+            .like{
+                .far{
+                    font-size: 1.5em;
+                    position: absolute;
+                    z-index: 10;
+                    transition: all 0ms linear 700ms;
+                    &:hover{
+                        color: transparent;
+                    }
+                    &:hover + .fas{
+                        /* -webkit-transform: scale(1); */
+                                transform: scale(1);
+                    }
+                }
+                .fas{
+                    font-size: 1.5em;;
+                    transition: all 900ms ease-in-out 0ms;
+                    position: relative;
+                    top: 1px;
+                    /* -webkit-transform: scale(0.01); */
+                    transform: scale(0.01);
+                    background: linear-gradient($color-prim, $color-sec);
+                    background-clip:text;
+                    color:transparent;
+                }
+            }  
         }
     }
 }
 
 .foot{
-    
+    padding-top: 12px;
+    padding-bottom: 50px;
+    background-color: $color-bk-light0;
+    color: $colortext3;
+    margin-top: 0;
     &>*{
         width: 90%;
         margin: auto;
     }
-    padding-top: 12px;
-    padding-bottom: 50px;
-    
-    background-color: $color-bk-light0;
-    color: $colortext3;
-    margin-top: 0;
        &__title{  
         font-family: "Shrikhand";
         font-size: 0.8em;
@@ -318,6 +461,7 @@ a{
     }
 }
 
+
 /**********************************/
 /********* menus des restos *******/
 /**********************************/
@@ -325,27 +469,19 @@ a{
 #hdrlogo-pages{
     box-shadow: none;
 }
+
 .page-picture{
     display: flex;
     justify-content: center;
     align-content: center;
     min-width: 100%;
-    /* height: auto; */
-    /* max- */height: auto;
-    max-height: 55vw;
-    overflow: hidden;  
-    
+    height: auto;
+    max-height: 45vw;
+    overflow: hidden;
     img{
         width: 100%;
-        
         object-fit: cover;
-        /* object-position: center; */
-        /* top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); */
-        /* width: 100%; */
-        height: auto;
-                      
+        height: auto;              
     }
 }
 .pages-options{
@@ -355,42 +491,70 @@ a{
     }
     @include most-block-display;
     position: relative;
-    top: -15vw;
+    top: -13vw;
     border-radius: 40px 40px 0px 0px;
     padding-top: 25px;
     padding-bottom: 30px;
-    margin-bottom: -15vw;
+    margin-bottom: -13vw;
     .options__header{
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        font-size: 170%;
+        height: 80px;
+        font-size: 175%;
+        margin: auto;
+        margin-bottom: 16px;
         .title{
             font-size: inherit;
-            font-family: "Shrikhand",sans-serif;
-            margin-bottom: 45px;
+            font-family: "Shrikhand",sans-serif;   
+        }
+        .like{
+            .far{
+                position: absolute;
+                z-index: 10;
+                transition: all 0ms linear 700ms;
+                &:hover{
+                    color: transparent;
+                }
+                &:hover + .fas{    
+                    transform: scale(1); 
+                }  
+            }
+            .fas{
+                transition: all 900ms ease-in-out 0ms;
+                position: relative;
+                top: -2px;
+                transform: scale(0.01);
+                background: linear-gradient($color-prim, $color-sec);
+                background-clip:text;
+                color:transparent;            
+            }
         }
     }
+    
     #all-parts{
         >*{
-            height: 100%;
-            margin-bottom: 35px;
-        }
-        #first-part{
+            opacity: 0;
+            height: auto;
+            margin-bottom: 25px;
             display: flex;
             flex-direction: column;
             width: 100%;
+            animation-name: appear;    
+            animation-duration: 2500ms;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards; 
+        }   
+        #first-part{    
+            animation-delay: 1000ms;
         }
-        #second-part{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
+        #second-part{   
+            animation-delay: 2000ms;
         }
-        #third-part{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }  
+        #third-part{   
+            animation-delay: 3000ms;
+        }    
     }
     .options--menus__part{
         width: 2.5em;
@@ -398,54 +562,101 @@ a{
         margin-bottom: 15px;
         padding-bottom: 6px;
         text-transform: uppercase;
-        border-bottom: 2px solid $color-tert;            
+        border-bottom: 2px solid $color-tert;
     }
     .info__buttons{
+        width: 100%;
         .infobutton--menus{
             position: relative;
+            display:flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            height: 70px;
+            width: 100%;
+            margin-bottom: 15px;
+            @include default-shadnrad;
+            overflow: hidden;
+            &:hover{
+                box-shadow: 2px 6px 2px $color-bk-light1;
+                        transform: scale(1.01);
+            }
+            &:hover > .card__body--menus .price-end .valid-plate{
+                    width: 70px;
+                    .fas{
+                        transform: rotate(1turn);
+                    }
+            }
             a{
                 position: absolute;
                 width: 100%;
                 height: 100%;
                 top: 0;
                 left: 0;
-                z-index: 10;
+                z-index: 10;    
             }
             .card__body--menus{
-                
                 background-color: $color-bk-light4;
-                @include default-shadnrad;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                align-content: baseline;
+                align-content: center;
                 height: 70px;
-                margin-bottom: 15px;
-                .text{
-                    width: 75%;
+                width: 100%;
+                .text{                   
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    margin-left: 5%;
+                    white-space: nowrap;
+                    overflow: hidden;
                     strong{
+                        position: relative;
                         margin: 0;
-                        margin-top: 10px;
-                    }
-                    p{
-                        margin: 0;
-                        margin-bottom: 10px;
-                        font-weight: 300;
+                        margin-top: 7px;
                         width: 100%;
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
                     }
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    margin-left: 5%;
+                    p{
+                        margin: 0;
+                        margin-bottom: 8px;
+                        font-weight: 300;
+                        width: 100%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }  
                 }
-                .price{
+                .price-end{
                     display: flex;
-                    flex-direction: column-reverse;
-                    font-weight: bold;
-                    margin-right: 5%;
+                    .price{
+                        display: flex;
+                        flex-direction: column-reverse;
+                        font-weight: bold;
+                        margin-right: 13px;
+                        p{
+                            margin-bottom: 11px;
+                        }  
+                    }
+                    .valid-plate{
+                        height: 70px;
+                        width:0px;
+                        background-color: $color-tert;
+                        display: flex;
+                        justify-content: left;
+                        align-items: center;
+                        transition: width 850ms ease-in-out 50ms;
+                        .fas{
+                            margin-left: 24px;
+                            font-size: large;
+                            color: $color-tert;
+                            background-color: $color-bk-light4;
+                            border-radius: 50%;
+                            padding:3px;
+                            transition: transform 750ms linear 150ms;
+                        }
+                    }
                 }
             }
         }
@@ -466,7 +677,7 @@ a{
 /******** VERSION TABLETTE****************/
 /*****************************************/
 
-@media all and (min-width: 769px) and (max-width: 992px) {
+@media all and (min-width: 769px) and (max-width: 992px){
     body{
         width: 99%;
         margin: auto;
@@ -503,7 +714,7 @@ a{
                 strong {
                     margin-right: 15px;
                 }  
-            }
+            }   
         }
     }
     .options{
@@ -517,25 +728,23 @@ a{
             }
         }
     }
-    /* .pages-options{
-        
-        top: -44px;
-        margin-bottom: -44px;
-    } */
+    .page-picture{
+        max-height: 38vw;
+    }
     #all-parts{
-        
         height: 100%;
         width: 90%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: center;
         align-items: flex-start;
-        
         #first-part, #second-part, #third-part{
-            max-width: 47%; 
+            width: 42%; 
             height: auto;
-            margin-bottom: 30px;            
+            margin-bottom: 25px;
+            margin-left: 13px;
+            margin-right: 13px;
         }
     }
     .command{
@@ -548,8 +757,8 @@ a{
 /* ************************************************ */
 
 @media all and (min-width: 992px){
-    
     body{
+        max-width: 2000px;
         width: 80%;
         margin: auto;
         background-color: $color-bk-light1;
@@ -604,8 +813,7 @@ a{
                     margin-right: 15px;
                 }   
             }
-        }
-        
+        } 
     }
     .options{
         &__cards{
@@ -624,25 +832,25 @@ a{
             }
         }
     }
-    /* .pages-options{
-        top: -44px;
-        margin-bottom: -44px;
-    } */
+    .page-picture{
+        max-height: 33vw;
+    }
     #all-parts{
         height: 100%;
         width: 90%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: center;
         align-content: flex-start;
         #first-part, #second-part, #third-part{
-            max-width: 47%;
+            width: 45%;
             height: auto;
-            margin-bottom: 30px;            
+            margin-bottom: 30px;
+            margin-left: 17px;
+            margin-right: 17px;          
         }
     }
-    
     .command{
         max-width: 25%;
     }

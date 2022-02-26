@@ -1,0 +1,143 @@
+/* image bannière de resto */
+
+.page-picture{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-width: 100%;
+    height: auto;
+    max-height: 45vw;
+    overflow: hidden;
+    img{
+        width: 100%;
+        object-fit: cover;
+        height: auto;              
+    }
+
+    /*responsive tablette*/
+    @media all and (min-width: 769px) and (max-width: 992px){
+        
+        max-height: 38vw;
+        
+    }
+    @media all and (min-width: 992px){
+        max-height: 33vw;
+    }
+}
+
+/* bloc de l'ensemble des menus de chaque page resto */
+
+.pages-options{
+    &>*{
+        width: 90%;
+        margin: auto;
+    }
+    @include most-block-display;
+    position: relative;
+    top: -13vw;
+    border-radius: 40px 40px 0px 0px;
+    padding-top: 25px;
+    padding-bottom: 30px;
+    margin-bottom: -13vw;
+    .options__header{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        height: 80px;
+        font-size: 175%;
+        margin: auto;
+        margin-bottom: 16px;
+        .title{
+            font-size: inherit;
+            font-family: "Shrikhand",sans-serif;
+            font-weight: normal;  
+        }
+        
+    }
+    #all-parts{
+        >*{
+            opacity: 0;
+            height: auto;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            animation-name: appear;    
+            animation-duration: 2500ms;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards; 
+        }   
+        #first-part{    
+            animation-delay: 1000ms;
+        }
+        #second-part{   
+            animation-delay: 2000ms;
+        }
+        #third-part{   
+            animation-delay: 3000ms;
+        }
+        @media all and (min-width: 769px) and (max-width: 992px){
+            height: 100%;
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            #first-part, #second-part, #third-part{
+                width: 42%; 
+                height: auto;
+                margin-bottom: 25px;
+                margin-left: 13px;
+                margin-right: 13px;
+            }
+        }
+        
+        @media all and (min-width: 992px){
+            height: 100%;
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: flex-start;
+            #first-part, #second-part, #third-part{
+                width: 45%;
+                height: auto;
+                margin-bottom: 30px;
+                margin-left: 17px;
+                margin-right: 17px;          
+            }
+        }
+    }
+    .options--menus__part{
+        width: 2.5em;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding-bottom: 6px;
+        font-size: medium;
+        font-weight: normal;
+        text-transform: uppercase;
+        border-bottom: 2px solid $color-tert;
+    }
+    .info__buttons{
+        width: 100%;
+        
+    }
+    .command{
+        width: 55%;
+        margin-top: 22px;
+        margin-bottom: 22px;
+        text-align: center;
+
+        /*responsive tablette*/
+        @media all and (min-width: 769px) and (max-width: 992px){
+            max-width: 35%;
+        }
+        @media all and (min-width: 992px){
+            max-width: 25%;
+        }
+    }
+       
+}

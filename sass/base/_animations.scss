@@ -1,0 +1,60 @@
+/* ****************************** */
+/* ******** animations ********** */
+/* ****************************** */
+
+/* loader animation du spinner bordure, rotation, et zoom sur deux tours*/
+@keyframes mouvim{
+    0%{
+        transform: rotate(-0.1turn) scale(0.1);
+    }
+    50%{
+        transform: rotate(1turn) scale(1.1);
+        border-left: 30px solid $color-tert;
+        border-right: 30px solid $color-prim;
+    }
+    100%{
+        transform: rotate(2turn) scale(0.1);
+        border-left: 10px solid $color-tert;
+        border-right: 10px solid $color-prim;
+    }
+}
+
+/* loader apparition arrière plan et disparition */
+@keyframes colorbk{
+    0%{
+        width: inherit;
+        opacity: 100;
+        z-index: 100;
+    }
+    20%{
+        width: inherit;
+        opacity: 0.99;
+        z-index: 100;
+        background-color: $color-sec;
+    }
+    99%{
+        width: inherit;
+        opacity: 0.94;
+        z-index: 100;
+        background-color: $color-bk-light4;
+    }
+    100%{
+        width: inherit;
+        opacity: 0%;
+        
+    }
+}
+
+/* apparition progressive des parties de menu pour la page de chaque restaurant */
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}

@@ -1,0 +1,52 @@
+.like{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 100%;
+    font-size: 30px;
+    a{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        &:focus + .far{
+            color: transparent;
+        }
+        &:focus ~ .fas{    
+            transform: scale(0.95); 
+        }
+        @media all and (min-width: 992px){
+            &:hover + .far{
+                color: transparent;
+            }
+            &:hover ~ .fas{    
+                transform: scale(0.95);
+            }
+        }  
+    }
+    
+    .far{
+        
+        /* z-index: 10; */
+        
+        position: absolute;
+        
+        transition: all 100ms linear 600ms;
+        
+    }
+    .fas{
+        
+        transition: all 900ms ease-in-out 0ms;
+        position: relative;
+        
+        transform: scale(0.01);
+        background: linear-gradient($color-prim, $color-sec);
+        background-clip: text;
+        color: transparent;
+                
+    }
+}

@@ -1,0 +1,32 @@
+/* quelques règles mixin de stylisation répétitives :*/
+@mixin default-shadnrad{
+    box-shadow: 0.5px 2px 5px $color-bk-light1;
+    border-radius: 17px;
+    
+}
+
+@mixin most-block-display{
+    display: flex;
+    flex-direction: column;
+    background-color: $color-bk-light3;
+}
+
+@mixin rndbutton{
+    display:inline-block;
+    background: linear-gradient(-10deg, $color-prim, $color-sec);
+    padding: auto;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+    width: 100%;
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0.5px 2px 5px $color-bk-light1;
+    border-radius: 1.5em;
+    &:hover, &:active{
+        background: linear-gradient(-10deg, #ac7fe4, #fd9fe3);
+        box-shadow: 2px 6px 2px $color-bk-light1;
+        font-weight: bold;
+        letter-spacing: 0.1px;
+    }
+}

@@ -1,18 +1,20 @@
 @charset "UTF-8";
+/* declaration couleurs avec variables :*/
+/* quelques règles mixin de stylisation répétitives :*/
+/* @import "./vendors/xyzforexample"; */
 /****************************************/
 /* import de police googlefonts du site */
 /****************************************/
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
-/* ************************************************** */
-/* ****************** MOBILE ************************ */
-/* ************************************************** */
 /* ************************** */
 /* *géneralités remarquables* */
 /* ************************** */
 * {
   box-sizing: border-box;
+  /* on calcule maintenant toutes les dimensions à la bordure */
   margin: 0;
+  /* on fixera ces dimensions au besoin */
   padding: 0;
 }
 
@@ -20,6 +22,22 @@ body {
   width: 100%;
   font-family: "Roboto", sans-serif;
   letter-spacing: -0.2px;
+  /* on desserre un peu */
+}
+@media all and (min-width: 769px) and (max-width: 992px) {
+  body {
+    width: 99%;
+    margin: auto;
+    background-color: #c0c0c0;
+  }
+}
+@media all and (min-width: 992px) {
+  body {
+    max-width: 2000px;
+    width: 80%;
+    margin: auto;
+    background-color: #c0c0c0;
+  }
 }
 
 h1 {
@@ -28,6 +46,7 @@ h1 {
 
 header, main, footer {
   width: 100%;
+  /* important pour maitriser les positions dans la page */
 }
 
 a {
@@ -36,54 +55,40 @@ a {
 }
 
 /* ****************************** */
-/* ******animations************** */
+/* ******** animations ********** */
 /* ****************************** */
+/* loader animation du spinner bordure, rotation, et zoom sur deux tours*/
 @-webkit-keyframes mouvim {
   0% {
-    /* opacity:100%; */
-    /* z-index: 100; */
     transform: rotate(-0.1turn) scale(0.1);
-    /* -webkit-transform: rotate(-0.1turn) scale(0.1); */
   }
   50% {
-    /* opacity: 7%; */
     transform: rotate(1turn) scale(1.1);
-    /* -webkit-transform: rotate(1turn) scale(1.1); */
-    border-left: 35px solid #99E2D0;
-    border-right: 35px solid #9356dc;
+    border-left: 30px solid #99E2D0;
+    border-right: 30px solid #9356dc;
   }
   100% {
-    /* opacity:100%; */
-    /* z-index: 100; */
     transform: rotate(2turn) scale(0.1);
-    /* -webkit-transform: rotate(2turn) scale(0.1); */
     border-left: 10px solid #99E2D0;
     border-right: 10px solid #9356dc;
   }
 }
 @keyframes mouvim {
   0% {
-    /* opacity:100%; */
-    /* z-index: 100; */
     transform: rotate(-0.1turn) scale(0.1);
-    /* -webkit-transform: rotate(-0.1turn) scale(0.1); */
   }
   50% {
-    /* opacity: 7%; */
     transform: rotate(1turn) scale(1.1);
-    /* -webkit-transform: rotate(1turn) scale(1.1); */
-    border-left: 35px solid #99E2D0;
-    border-right: 35px solid #9356dc;
+    border-left: 30px solid #99E2D0;
+    border-right: 30px solid #9356dc;
   }
   100% {
-    /* opacity:100%; */
-    /* z-index: 100; */
     transform: rotate(2turn) scale(0.1);
-    /* -webkit-transform: rotate(2turn) scale(0.1); */
     border-left: 10px solid #99E2D0;
     border-right: 10px solid #9356dc;
   }
 }
+/* loader apparition arrière plan et disparition */
 @-webkit-keyframes colorbk {
   0% {
     width: inherit;
@@ -91,11 +96,13 @@ a {
     z-index: 100;
   }
   20% {
+    width: inherit;
     opacity: 0.99;
     z-index: 100;
     background-color: #FF79DA;
   }
   99% {
+    width: inherit;
     opacity: 0.94;
     z-index: 100;
     background-color: #ffffff;
@@ -112,11 +119,13 @@ a {
     z-index: 100;
   }
   20% {
+    width: inherit;
     opacity: 0.99;
     z-index: 100;
     background-color: #FF79DA;
   }
   99% {
+    width: inherit;
     opacity: 0.94;
     z-index: 100;
     background-color: #ffffff;
@@ -126,6 +135,7 @@ a {
     opacity: 0%;
   }
 }
+/* apparition progressive des parties de menu pour la page de chaque restaurant */
 @-webkit-keyframes appear {
   0% {
     opacity: 0;
@@ -153,18 +163,24 @@ a {
 /* ************ */
 .loader {
   width: 0%;
+  /* après son jeu le loader doit disparaitre */
+  opacity: 0%;
+  /* après son jeu le loader doit disparaitre */
+  z-index: -10;
+  /* après son jeu le loader doit disparaitre */
   height: 100vh;
+  /* couverture de l'ecran */
   margin: 0;
   background-color: #9356dc;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  opacity: 0%;
   -webkit-animation-name: colorbk;
           animation-name: colorbk;
-  -webkit-animation-duration: 3200ms;
-          animation-duration: 3200ms;
+  /*animation bkground loader*/
+  -webkit-animation-duration: 3000ms;
+          animation-duration: 3000ms;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-delay: 0s;
@@ -178,12 +194,13 @@ a {
   border-left: 10px solid #99E2D0;
   border-right: 10px solid #9356dc;
   border-radius: 50%;
-  width: 350px;
-  height: 350px;
+  width: 270px;
+  height: 270px;
   -webkit-animation-name: mouvim;
           animation-name: mouvim;
-  -webkit-animation-duration: 3200ms;
-          animation-duration: 3200ms;
+  /*animation spinner attention synchro avec la première anim*/
+  -webkit-animation-duration: 3000ms;
+          animation-duration: 3000ms;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-delay: 0s;
@@ -193,9 +210,331 @@ a {
 }
 .loader__spinim__im {
   position: absolute;
+  /*centrage debut*/
+  width: 220px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /*centrage fin*/
+}
+
+/* ******* boutons de la section information vus en page index***** */
+.infobutton {
+  box-shadow: 0.5px 2px 5px #c0c0c0;
+  border-radius: 17px;
+  display: flex;
+  width: 100%;
+  margin: auto;
+  height: 55px;
+  border: none;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 0;
+}
+.infobutton:hover, .infobutton:active {
+  background: rgba(147, 86, 220, 0.15);
+}
+.infobutton .roundnum {
+  display: flex;
+  width: 24px;
+  line-height: 24px;
+  justify-content: center;
+  align-content: center;
+  background-color: #9356dc;
+  border-radius: 12px;
+  margin-left: -12px;
+}
+.infobutton .roundnum__num {
+  color: #ffffff;
+}
+.infobutton .fas {
+  width: 23%;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #686868;
+  margin-right: 5%;
+}
+
+/*bouton de commande fin de page des restos*/
+.buttonrnd {
+  display: inline-block;
+  background: linear-gradient(-10deg, #9356dc, #FF79DA);
+  padding: auto;
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
+  width: 100%;
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0.5px 2px 5px #c0c0c0;
+  border-radius: 1.5em;
+}
+.buttonrnd:hover, .buttonrnd:active {
+  background: linear-gradient(-10deg, #ac7fe4, #fd9fe3);
+  box-shadow: 2px 6px 2px #c0c0c0;
+  font-weight: bold;
+  letter-spacing: 0.1px;
+}
+
+/*bouton de navigation explorer les restos*/
+.headerbutton {
+  display: inline-block;
+  background: linear-gradient(-10deg, #9356dc, #FF79DA);
+  padding: auto;
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
+  width: 100%;
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0.5px 2px 5px #c0c0c0;
+  border-radius: 1.5em;
+}
+.headerbutton:hover, .headerbutton:active {
+  background: linear-gradient(-10deg, #ac7fe4, #fd9fe3);
+  box-shadow: 2px 6px 2px #c0c0c0;
+  font-weight: bold;
+  letter-spacing: 0.1px;
+}
+
+/****cartes des restaurants du bloc d'options en page d'accueil********/
+.card {
+  box-shadow: 0.5px 2px 5px #c0c0c0;
+  border-radius: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  width: 100%;
+  height: auto;
+  min-height: 240px;
+  margin: auto;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.card:hover, .card:active {
+  box-shadow: 2px 6px 2px #c0c0c0;
+  transform: scale(1.02);
+}
+.card a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.card__pic {
+  position: relative;
+  width: 100%;
+  height: 195px;
+  overflow: hidden;
+  border-radius: 17px 17px 0 0;
+}
+.card__pic img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+.card__pic .sticker {
+  margin: 0;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 6px 12px 6px 12px;
+  border-radius: 3px;
+  background-color: #99E2D0;
+  color: #287262;
+}
+.card__body {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__body .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.card__body .text p, .card__body .text h3 {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+/*carte-bouton élément de menu à choisir dans pages resto*/
+.info__buttons .infobutton--menus {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 70px;
+  width: 100%;
+  margin-bottom: 15px;
+  box-shadow: 0.5px 2px 5px #c0c0c0;
+  border-radius: 17px;
+  overflow: hidden;
+}
+.info__buttons .infobutton--menus a:focus .infobutton--menus {
+  box-shadow: 2px 6px 2px #c0c0c0;
+  transform: scale(1.01);
+}
+.info__buttons .infobutton--menus a:focus + .card__body--menus .price-end .valid-plate {
+  width: 65px;
+  margin-right: 0;
+}
+.info__buttons .infobutton--menus a:focus + .card__body--menus .price-end .valid-plate .rndv {
+  transform: rotate(1turn);
+  margin: auto;
+}
+@media all and (min-width: 992px) {
+  .info__buttons .infobutton--menus:hover {
+    box-shadow: 2px 6px 2px #c0c0c0;
+    transform: scale(1.01);
+  }
+  .info__buttons .infobutton--menus:hover > .card__body--menus .price-end .valid-plate {
+    width: 65px;
+    margin-right: 0;
+  }
+  .info__buttons .infobutton--menus:hover > .card__body--menus .price-end .valid-plate .rndv {
+    transform: rotate(1turn);
+  }
+}
+.info__buttons .infobutton--menus a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.info__buttons .infobutton--menus .card__body--menus {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  height: 70px;
+  width: 100%;
+}
+.info__buttons .infobutton--menus .card__body--menus .text {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 5%;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.info__buttons .infobutton--menus .card__body--menus .text h4 {
+  position: relative;
+  margin: 0;
+  margin-top: 11px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.info__buttons .infobutton--menus .card__body--menus .text p {
+  margin: 0;
+  margin-bottom: 11px;
+  font-weight: 300;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.info__buttons .infobutton--menus .card__body--menus .price-end {
+  display: flex;
+}
+.info__buttons .infobutton--menus .card__body--menus .price-end .price {
+  display: flex;
+  flex-direction: column-reverse;
+  font-weight: bold;
+  margin-right: 13px;
+}
+.info__buttons .infobutton--menus .card__body--menus .price-end .price p {
+  margin-bottom: 11px;
+}
+.info__buttons .infobutton--menus .card__body--menus .price-end .valid-plate {
+  margin-right: -65px;
+  height: 70px;
+  width: 65px;
+  background-color: #99E2D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 850ms ease-in-out 50ms;
+}
+.info__buttons .infobutton--menus .card__body--menus .price-end .valid-plate .rndv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: transform 750ms linear 150ms;
+}
+.info__buttons .infobutton--menus .card__body--menus .price-end .valid-plate .rndv .fas {
+  font-size: 14px;
+  color: #99E2D0;
+  width: 14px;
+}
+
+.like {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 100%;
+  font-size: 30px;
+}
+.like a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.like a:focus + .far {
+  color: transparent;
+}
+.like a:focus ~ .fas {
+  transform: scale(0.95);
+}
+@media all and (min-width: 992px) {
+  .like a:hover + .far {
+    color: transparent;
+  }
+  .like a:hover ~ .fas {
+    transform: scale(0.95);
+  }
+}
+.like .far {
+  /* z-index: 10; */
+  position: absolute;
+  transition: all 100ms linear 600ms;
+}
+.like .fas {
+  transition: all 900ms ease-in-out 0ms;
+  position: relative;
+  transform: scale(0.01);
+  background: linear-gradient(#9356dc, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
 }
 
 /*************************************/
@@ -205,6 +544,7 @@ a {
   display: flex;
   flex-direction: column;
   background-color: #f2f2f2;
+  /*apparence*/
 }
 .head__logo {
   position: relative;
@@ -226,14 +566,16 @@ a {
   font-size: 150%;
 }
 .head .head__geo {
+  /*bandeau localisation*/
   width: 100%;
   text-align: center;
   margin-top: 0px;
   line-height: 3em;
   background-color: #e7e7e7;
 }
-.head .head__geo:hover {
+.head .head__geo:hover, .head .head__geo:active {
   background: rgba(147, 86, 220, 0.15);
+  /* petit changement au survol */
 }
 .head .head__geo span {
   margin-left: 12px;
@@ -251,7 +593,7 @@ a {
   text-align: center;
   font-weight: 300;
   margin-top: 22px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 .head__nav {
   width: 58%;
@@ -260,25 +602,46 @@ a {
   margin-bottom: 45px;
   align-self: center;
 }
-.head__nav .headerbutton {
-  display: inline-block;
-  background: linear-gradient(-10deg, #9356dc, #FF79DA);
-  padding: auto;
-  padding-top: 0.9em;
-  padding-bottom: 0.9em;
-  width: 100%;
-  color: #ffffff;
-  font-weight: 500;
-  text-decoration: none;
-  box-shadow: 0.5px 2px 5px #c0c0c0;
-  border-radius: 17px;
-  border-radius: 1.5em;
+@media all and (min-width: 769px) and (max-width: 992px) {
+  .head .head__logo img {
+    width: 25%;
+  }
+  .head__nav {
+    width: 35%;
+  }
 }
-.head__nav .headerbutton:hover {
-  background: linear-gradient(-10deg, #ac7fe4, #fd9fe3);
-  box-shadow: 2px 6px 2px #c0c0c0;
-  font-weight: bold;
-  letter-spacing: 0.1px;
+@media all and (min-width: 992px) {
+  .head .head__logo {
+    text-align: left;
+  }
+  .head .head__logo img {
+    width: 17%;
+    margin-left: 10%;
+  }
+  .head__nav {
+    width: 25%;
+  }
+  .head .head__geo {
+    text-align: left;
+  }
+  .head .head__geo i {
+    margin-left: 5%;
+  }
+  .head .head .title {
+    width: auto;
+    padding: 0;
+    margin-left: 5%;
+    align-self: flex-start;
+  }
+  .head .parag {
+    text-align: left;
+    margin-left: 5%;
+  }
+}
+
+/******* pas d'ombre en bannière sur les pages des restos: *********/
+#hdrlogo-pages {
+  box-shadow: none;
 }
 
 /*****************************/
@@ -288,57 +651,60 @@ a {
   width: 100%;
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: 15px;
+  padding-top: 18px;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
 }
 .info .info__buttons {
-  height: 280px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-content: center;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
   margin-top: 15px;
 }
-.info .info__buttons .infobutton {
-  box-shadow: 0.5px 2px 5px #c0c0c0;
-  border-radius: 17px;
-  display: flex;
-  width: 100%;
-  margin: auto;
-  height: 70px;
-  border: none;
-  align-items: center;
-  background-color: #f2f2f2;
-  padding: 0;
+@media all and (min-width: 769px) and (max-width: 992px) {
+  .info .info__buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    height: auto;
+    width: auto;
+  }
+  .info .info__buttons .infobutton {
+    height: 57px;
+    width: 40%;
+    margin-right: 0%;
+    margin-left: 12px;
+    margin-bottom: 20px;
+  }
 }
-.info .info__buttons .infobutton:hover {
-  background: rgba(147, 86, 220, 0.15);
-}
-.info .info__buttons .infobutton .roundnum {
-  display: flex;
-  width: 24px;
-  line-height: 24px;
-  justify-content: center;
-  align-content: center;
-  background-color: #9356dc;
-  border-radius: 12px;
-  margin-left: -12px;
-}
-.info .info__buttons .infobutton .roundnum__num {
-  color: #ffffff;
-}
-.info .info__buttons .infobutton .fas {
-  width: 70px;
-  font-size: 1.3rem;
-  color: #686868;
+@media all and (min-width: 992px) {
+  .info .info__buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    height: auto;
+    width: 100%;
+  }
+  .info .info__buttons .infobutton {
+    height: 60px;
+    width: 30%;
+    margin-right: 0%;
+    margin-left: 12px;
+    margin-bottom: 20px;
+  }
 }
 
-/*******************************/
-/******* menu d'options ********/
-/*******************************/
+/******************************************/
+/******* menu d'options choix resto********/
+/******************************************/
 .options {
   padding-top: 40px;
   padding-bottom: 45px;
@@ -360,139 +726,36 @@ a {
   height: auto;
   margin-top: 22px;
 }
-.options .card {
-  box-shadow: 0.5px 2px 5px #c0c0c0;
-  border-radius: 17px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  background-color: #ffffff;
-  width: 100%;
-  height: auto;
-  min-height: 240px;
-  margin: auto;
-  margin-top: 8px;
-  margin-bottom: 15px;
-  position: relative;
+@media all and (min-width: 769px) and (max-width: 992px) {
+  .options__cards {
+    justify-content: space-between;
+  }
+  .options__cards .card {
+    width: 45%;
+  }
+  .options__cards .card img {
+    width: 110%;
+  }
 }
-.options .card:hover {
-  box-shadow: 2px 6px 2px #c0c0c0;
-  /* -webkit-transform: scale(1.03); */
-  transform: scale(1.03);
-}
-.options .card a {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
-.options .card__pic {
-  position: relative;
-  width: 100%;
-  height: 195px;
-  overflow: hidden;
-  border-radius: 17px 17px 0 0;
-}
-.options .card__pic img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -60%);
-}
-.options .card__pic .sticker {
-  margin: 0;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  padding: 6px 12px 6px 12px;
-  border-radius: 3px;
-  background-color: #99E2D0;
-  color: #287262;
-}
-.options .card__body {
-  width: 90%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.options .card__body .text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.options .card__body .text p, .options .card__body .text h3 {
-  margin-top: 4px;
-  margin-bottom: 4px;
-}
-.options .card__body .like .far {
-  font-size: 1.5em;
-  position: absolute;
-  z-index: 10;
-  transition: all 0ms linear 700ms;
-}
-.options .card__body .like .far:hover {
-  color: transparent;
-}
-.options .card__body .like .far:hover + .fas {
-  /* -webkit-transform: scale(1); */
-  transform: scale(1);
-}
-.options .card__body .like .fas {
-  font-size: 1.5em;
-  transition: all 900ms ease-in-out 0ms;
-  position: relative;
-  top: 1px;
-  /* -webkit-transform: scale(0.01); */
-  transform: scale(0.01);
-  background: linear-gradient(#9356dc, #FF79DA);
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
+@media all and (min-width: 992px) {
+  .options__cards {
+    justify-content: space-between;
+    justify-items: space-between;
+  }
+  .options__cards .card {
+    margin: 0;
+    width: 23%;
+    height: 255px;
+  }
+  .options__cards .card .card__pic {
+    height: 165px;
+  }
+  .options__cards .card img {
+    width: 132%;
+  }
 }
 
-.foot {
-  padding-top: 12px;
-  padding-bottom: 50px;
-  background-color: #383838;
-  color: #ffffff;
-  margin-top: 0;
-}
-.foot > * {
-  width: 90%;
-  margin: auto;
-}
-.foot__title {
-  font-family: "Shrikhand";
-  font-size: 0.8em;
-}
-.foot a {
-  color: #ffffff;
-}
-.foot ul {
-  padding: 0;
-  list-style: none;
-  line-height: 1.8em;
-}
-.foot ul i {
-  width: 15px;
-  margin-right: 20px;
-}
-
-/**********************************/
-/********* menus des restos *******/
-/**********************************/
-#hdrlogo-pages {
-  box-shadow: none;
-}
-
+/* image bannière de resto */
 .page-picture {
   display: flex;
   justify-content: center;
@@ -501,6 +764,7 @@ a {
   height: auto;
   max-height: 45vw;
   overflow: hidden;
+  /*responsive tablette*/
 }
 .page-picture img {
   width: 100%;
@@ -508,7 +772,18 @@ a {
      object-fit: cover;
   height: auto;
 }
+@media all and (min-width: 769px) and (max-width: 992px) {
+  .page-picture {
+    max-height: 38vw;
+  }
+}
+@media all and (min-width: 992px) {
+  .page-picture {
+    max-height: 33vw;
+  }
+}
 
+/* bloc de l'ensemble des menus de chaque page resto */
 .pages-options {
   display: flex;
   flex-direction: column;
@@ -536,27 +811,7 @@ a {
 .pages-options .options__header .title {
   font-size: inherit;
   font-family: "Shrikhand", sans-serif;
-}
-.pages-options .options__header .like .far {
-  position: absolute;
-  z-index: 10;
-  transition: all 0ms linear 700ms;
-}
-.pages-options .options__header .like .far:hover {
-  color: transparent;
-}
-.pages-options .options__header .like .far:hover + .fas {
-  transform: scale(1);
-}
-.pages-options .options__header .like .fas {
-  transition: all 900ms ease-in-out 0ms;
-  position: relative;
-  top: -2px;
-  transform: scale(0.01);
-  background: linear-gradient(#9356dc, #FF79DA);
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
+  font-weight: normal;
 }
 .pages-options #all-parts > * {
   opacity: 0;
@@ -588,196 +843,8 @@ a {
   -webkit-animation-delay: 3000ms;
           animation-delay: 3000ms;
 }
-.pages-options .options--menus__part {
-  width: 2.5em;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  padding-bottom: 6px;
-  text-transform: uppercase;
-  border-bottom: 2px solid #99E2D0;
-}
-.pages-options .info__buttons {
-  width: 100%;
-}
-.pages-options .info__buttons .infobutton--menus {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  height: 70px;
-  width: 100%;
-  margin-bottom: 15px;
-  box-shadow: 0.5px 2px 5px #c0c0c0;
-  border-radius: 17px;
-  overflow: hidden;
-}
-.pages-options .info__buttons .infobutton--menus:hover {
-  box-shadow: 2px 6px 2px #c0c0c0;
-  transform: scale(1.01);
-}
-.pages-options .info__buttons .infobutton--menus:hover > .card__body--menus .price-end .valid-plate {
-  width: 70px;
-}
-.pages-options .info__buttons .infobutton--menus:hover > .card__body--menus .price-end .valid-plate .fas {
-  transform: rotate(1turn);
-}
-.pages-options .info__buttons .infobutton--menus a {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
-.pages-options .info__buttons .infobutton--menus .card__body--menus {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
-  height: 70px;
-  width: 100%;
-}
-.pages-options .info__buttons .infobutton--menus .card__body--menus .text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  margin-left: 5%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.pages-options .info__buttons .infobutton--menus .card__body--menus .text strong {
-  position: relative;
-  margin: 0;
-  margin-top: 7px;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.pages-options .info__buttons .infobutton--menus .card__body--menus .text p {
-  margin: 0;
-  margin-bottom: 8px;
-  font-weight: 300;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.pages-options .info__buttons .infobutton--menus .card__body--menus .price-end {
-  display: flex;
-}
-.pages-options .info__buttons .infobutton--menus .card__body--menus .price-end .price {
-  display: flex;
-  flex-direction: column-reverse;
-  font-weight: bold;
-  margin-right: 13px;
-}
-.pages-options .info__buttons .infobutton--menus .card__body--menus .price-end .price p {
-  margin-bottom: 11px;
-}
-.pages-options .info__buttons .infobutton--menus .card__body--menus .price-end .valid-plate {
-  height: 70px;
-  width: 0px;
-  background-color: #99E2D0;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  transition: width 850ms ease-in-out 50ms;
-}
-.pages-options .info__buttons .infobutton--menus .card__body--menus .price-end .valid-plate .fas {
-  margin-left: 24px;
-  font-size: large;
-  color: #99E2D0;
-  background-color: #ffffff;
-  border-radius: 50%;
-  padding: 3px;
-  transition: transform 750ms linear 150ms;
-}
-.pages-options .command {
-  width: 55%;
-  margin-top: 22px;
-  margin-bottom: 22px;
-  text-align: center;
-}
-.pages-options .command .buttonrnd {
-  display: inline-block;
-  background: linear-gradient(-10deg, #9356dc, #FF79DA);
-  padding: auto;
-  padding-top: 0.9em;
-  padding-bottom: 0.9em;
-  width: 100%;
-  color: #ffffff;
-  font-weight: 500;
-  text-decoration: none;
-  box-shadow: 0.5px 2px 5px #c0c0c0;
-  border-radius: 17px;
-  border-radius: 1.5em;
-}
-.pages-options .command .buttonrnd:hover {
-  background: linear-gradient(-10deg, #ac7fe4, #fd9fe3);
-  box-shadow: 2px 6px 2px #c0c0c0;
-  font-weight: bold;
-  letter-spacing: 0.1px;
-}
-
-/*****************************************/
-/******** VERSION TABLETTE****************/
-/*****************************************/
 @media all and (min-width: 769px) and (max-width: 992px) {
-  body {
-    width: 99%;
-    margin: auto;
-    background-color: #c0c0c0;
-  }
-
-  .head .head__logo img {
-    width: 25%;
-  }
-  .head__nav {
-    width: 35%;
-  }
-
-  .info .info__buttons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: flex-start;
-    height: auto;
-    width: auto;
-  }
-  .info .info__buttons .infobutton {
-    height: 55px;
-    max-width: -webkit-max-content;
-    max-width: -moz-max-content;
-    max-width: max-content;
-    margin-right: 0%;
-    margin-left: 12px;
-    margin-bottom: 20px;
-  }
-  .info .info__buttons .infobutton fas {
-    width: 35px;
-  }
-  .info .info__buttons .infobutton strong {
-    margin-right: 15px;
-  }
-
-  .options__cards {
-    justify-content: space-between;
-  }
-  .options__cards .card {
-    width: 45%;
-  }
-  .options__cards .card img {
-    width: 110%;
-  }
-
-  .page-picture {
-    max-height: 38vw;
-  }
-
-  #all-parts {
+  .pages-options #all-parts {
     height: 100%;
     width: 90%;
     display: flex;
@@ -786,105 +853,16 @@ a {
     justify-content: center;
     align-items: flex-start;
   }
-  #all-parts #first-part, #all-parts #second-part, #all-parts #third-part {
+  .pages-options #all-parts #first-part, .pages-options #all-parts #second-part, .pages-options #all-parts #third-part {
     width: 42%;
     height: auto;
     margin-bottom: 25px;
     margin-left: 13px;
     margin-right: 13px;
   }
-
-  .command {
-    max-width: 35%;
-  }
 }
-/* ************************************************ */
-/* ********     VERSION DESKTOP     *************** */
-/* ************************************************ */
 @media all and (min-width: 992px) {
-  body {
-    max-width: 2000px;
-    width: 80%;
-    margin: auto;
-    background-color: #c0c0c0;
-  }
-
-  .head .head__logo {
-    text-align: left;
-  }
-  .head .head__logo img {
-    width: 17%;
-    margin-left: 10%;
-  }
-  .head__nav {
-    width: 25%;
-  }
-
-  .head__geo {
-    text-align: left;
-  }
-  .head__geo i {
-    margin-left: 5%;
-  }
-
-  .head .title {
-    width: auto;
-    padding: 0;
-    margin-left: 5%;
-    align-self: flex-start;
-  }
-
-  .parag {
-    text-align: left;
-    margin: 5%;
-  }
-
-  .info .info__buttons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: flex-start;
-    height: auto;
-    width: 100%;
-  }
-  .info .info__buttons .infobutton {
-    height: 55px;
-    max-width: -webkit-max-content;
-    max-width: -moz-max-content;
-    max-width: max-content;
-    margin-right: 0%;
-    margin-left: 12px;
-    margin-bottom: 20px;
-  }
-  .info .info__buttons .infobutton fas {
-    width: 35px;
-  }
-  .info .info__buttons .infobutton strong {
-    margin-right: 15px;
-  }
-
-  .options__cards {
-    justify-content: space-between;
-    justify-items: space-between;
-  }
-  .options__cards .card {
-    margin: 0;
-    width: 23%;
-    height: 255px;
-  }
-  .options__cards .card .card__pic {
-    height: 165px;
-  }
-  .options__cards .card img {
-    width: 132%;
-  }
-
-  .page-picture {
-    max-height: 33vw;
-  }
-
-  #all-parts {
+  .pages-options #all-parts {
     height: 100%;
     width: 90%;
     display: flex;
@@ -893,15 +871,72 @@ a {
     justify-content: center;
     align-content: flex-start;
   }
-  #all-parts #first-part, #all-parts #second-part, #all-parts #third-part {
+  .pages-options #all-parts #first-part, .pages-options #all-parts #second-part, .pages-options #all-parts #third-part {
     width: 45%;
     height: auto;
     margin-bottom: 30px;
     margin-left: 17px;
     margin-right: 17px;
   }
-
-  .command {
+}
+.pages-options .options--menus__part {
+  width: 2.5em;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 6px;
+  font-size: medium;
+  font-weight: normal;
+  text-transform: uppercase;
+  border-bottom: 2px solid #99E2D0;
+}
+.pages-options .info__buttons {
+  width: 100%;
+}
+.pages-options .command {
+  width: 55%;
+  margin-top: 22px;
+  margin-bottom: 22px;
+  text-align: center;
+  /*responsive tablette*/
+}
+@media all and (min-width: 769px) and (max-width: 992px) {
+  .pages-options .command {
+    max-width: 35%;
+  }
+}
+@media all and (min-width: 992px) {
+  .pages-options .command {
     max-width: 25%;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+.foot {
+  padding-top: 12px;
+  padding-bottom: 50px;
+  background-color: #383838;
+  color: #ffffff;
+  margin-top: 0;
+}
+.foot > * {
+  width: 90%;
+  margin: auto;
+}
+.foot__title {
+  font-family: "Shrikhand";
+  font-size: 0.8em;
+}
+.foot a {
+  color: #ffffff;
+}
+.foot ul {
+  padding: 0;
+  list-style: none;
+  line-height: 1.8em;
+}
+.foot ul i {
+  width: 15px;
+  margin-right: 20px;
+}
+
+/* @import "./pages/xyzforexample"; */
+/* @import "./themes/xyzforexample"; *//*# sourceMappingURL=style.css.map */

@@ -1,0 +1,42 @@
+/* ************ */
+/**** loader ****/
+/* ************ */
+
+.loader{ 
+    width: 0%; /* après son jeu le loader doit disparaitre */
+    opacity: 0%; /* après son jeu le loader doit disparaitre */
+    z-index: -10;/* après son jeu le loader doit disparaitre */
+    height: 100vh; /* couverture de l'ecran */
+    margin: 0;
+    background-color: $color-prim;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    animation-name: colorbk; /*animation bkground loader*/
+    animation-duration: 3000ms;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    &__spinim{
+        position: relative;
+        margin: auto;
+        border-left: 10px solid $color-tert;
+        border-right: 10px solid $color-prim;
+        border-radius: 50%;
+        width: 270px;
+        height: 270px;
+        animation-name: mouvim;/*animation spinner attention synchro avec la première anim*/
+        animation-duration: 3000ms;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-iteration-count: 1;
+        &__im{
+            position: absolute;/*centrage debut*/
+            width: 220px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);/*centrage fin*/
+        }
+    }
+}

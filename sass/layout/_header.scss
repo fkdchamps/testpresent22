@@ -1,0 +1,105 @@
+/*************************************/
+/************ HEADER *****************/
+/*************************************/
+
+.head{
+    @include most-block-display;/*apparence*/
+    &__logo{
+        position: relative;
+        width: 100%;
+        padding: 1.4em 0em 0.5em 0em;
+        margin-top: 0px;
+        text-align: center;
+        background-color: $color-bk-light4;
+        box-shadow: 0px 0.5px 3px $color-bk-light1;
+        z-index: 10;
+        img{
+            width: 45%;   
+        }
+        &__arrow{
+            position: absolute;
+            top:26px;
+            left: 25px;
+            font-size: 150%;
+        }
+    }
+    .head__geo{/*bandeau localisation*/
+        width: 100%;
+        text-align: center;
+        margin-top: 0px;
+        line-height: 3em;
+        background-color: $color-bk-light2;
+        &:hover, &:active{
+            background: rgb(147, 86, 220, 0.15);  /* petit changement au survol */
+        } 
+        span{
+            margin-left: 12px;
+        }
+    }
+    .title{
+        width: 80%;
+        text-align: center;
+        align-self: center;
+        margin-top: 28px;
+        margin-bottom: 2px;    
+    }
+    .parag{
+        width: auto;
+        font-size: larger;
+        text-align: center;
+        font-weight: 300;
+        margin-top: 22px;
+        margin-bottom: 16px;
+    }
+    &__nav{
+        width: 58%;
+        text-align: center;
+        margin-top: 18px;
+        margin-bottom: 45px;
+        align-self: center;
+    }
+    @media all and (min-width: 769px) and (max-width: 992px){
+        .head__logo{
+            img{
+                width: 25%;
+            }
+        }
+        &__nav{
+            width: 35%;
+        }
+    }
+    @media all and (min-width: 992px){
+        .head__logo{
+            text-align: left;
+            img{
+                width: 17%;
+                margin-left: 10%;
+            }
+        }
+        &__nav{
+            width: 25%;
+        }
+        .head__geo{
+            text-align: left;
+            i{
+                margin-left: 5%;
+            }
+        }
+        .head .title{
+            width: auto;
+            padding: 0;
+            margin-left: 5%;
+            align-self: flex-start;
+        }
+        .parag{
+            text-align: left;
+            margin-left: 5%;
+        }
+    }
+}
+
+/******* pas d'ombre en bannière sur les pages des restos: *********/
+
+#hdrlogo-pages{
+    box-shadow: none;
+}

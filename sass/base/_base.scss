@@ -1,0 +1,39 @@
+/* ************************** */
+/* *géneralités remarquables* */
+/* ************************** */
+
+*{
+    box-sizing: border-box;/* on calcule maintenant toutes les dimensions à la bordure */
+    margin: 0; /* on fixera ces dimensions au besoin */
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: -0.2px; /* on desserre un peu */
+    @media all and (min-width: 769px) and (max-width: 992px){
+        width: 99%;
+        margin: auto;
+        background-color: $color-bk-light1;
+    }
+    @media all and (min-width: 992px){
+        max-width: 2000px;
+        width: 80%;
+        margin: auto;
+        background-color: $color-bk-light1;
+    }
+}
+
+h1{
+    font-size: x-large;
+}
+
+header, main, footer{
+    width: 100%; /* important pour maitriser les positions dans la page */
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}

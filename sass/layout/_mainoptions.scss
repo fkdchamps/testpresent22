@@ -1,0 +1,52 @@
+/******************************************/
+/******* menu d'options choix resto********/
+/******************************************/
+
+.options{
+    &>*{
+        width: 90%;
+        margin: auto;
+    }
+    padding-top: 40px;
+    padding-bottom: 45px;
+    @include most-block-display;
+    &__cards{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: auto;
+        height: auto;
+        margin-top: 22px;
+    }
+    @media all and (min-width: 769px) and (max-width: 992px){
+        
+        &__cards{
+            justify-content: space-between;
+            .card{
+            width: 45%;
+                img{
+                    width: 110%;
+                }
+            }
+        }
+    }
+    @media all and (min-width: 992px){
+        &__cards{
+            justify-content: space-between;
+            justify-items: space-between;
+            .card{
+            margin: 0;
+            width: 23%;
+            height: 255px;
+            .card__pic{
+                height: 165px;
+            }
+                img{
+                    width: 132%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,62 @@
+/*****************************/
+/**********info **************/
+/*****************************/
+
+.info{
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 18px;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-bk-light4;
+    .info__buttons{
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: center;
+        margin-bottom: 22px;
+        margin-top: 15px;
+        
+    }  
+    @media all and (min-width: 769px) and (max-width: 992px){
+        
+        & .info__buttons{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: flex-start;
+            height: auto;
+            width: auto;
+            .infobutton {
+                height: 57px;
+                width: 40%;
+                margin-right: 0%;
+                margin-left: 12px;
+                margin-bottom: 20px;
+            }   
+        }
+        
+    }
+    @media all and (min-width: 992px){
+        & .info__buttons{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: flex-start;
+            height: auto;
+            width: 100%;
+            .infobutton {
+                height: 60px;
+                width: 30%;
+                margin-right: 0%;
+                margin-left: 12px;
+                margin-bottom: 20px;
+                
+            }
+        }
+    }
+}

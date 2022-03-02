@@ -8,6 +8,7 @@
     height: auto;
     max-height: 45vw;
     overflow: hidden;
+    
     img{
         width: 100%;
         object-fit: cover;
@@ -28,9 +29,11 @@
 /* bloc de l'ensemble des menus de chaque page resto */
 
 .pages-options{
+    
     &>*{
         width: 90%;
         margin: auto;
+        height: auto;
     }
     @include most-block-display;
     position: relative;

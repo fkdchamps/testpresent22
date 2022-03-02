@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     animation-name: colorbk; /*animation bkground loader*/
     animation-duration: 3000ms;
     animation-timing-function: linear;

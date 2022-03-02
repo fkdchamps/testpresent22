@@ -19,12 +19,13 @@
         <div id="hdrlogo-index" class="head__logo">
             <img class="" src="images/logo/ohmyfood@2x.svg" alt="logo oh my food">
         </div>
-    
-        <p class="head__geo">
+        <!-- la checkbox invisible qui suit va permettre d'appliquer des propriétés sur des éléments cliqués surtout pour tactile -->
+        <input type="checkbox" id="checkgeo"/>
+        <label for="checkgeo" class="head__geo">
             <i class="fas fa-map-marker-alt"></i>
             <span>Paris, Belleville</span>
-        </p>
-
+        </label>
+            
         <h1 class="title">Réservez le menu qui vous convient</h1>
 
         <p class="parag">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
@@ -40,23 +41,40 @@
             <h2 class="title">Fonctionnement</h2>
 
             <div class="info__buttons">
-                <article class="infobutton">
-                    <p class="roundnum"><span class="roundnum__num">1</span></p>
-                    <i class="fas fa-mobile-alt"></i>
-                    <h4>Choisissez un restaurant</h4>
-                </article>
-
-                <article class="infobutton">
-                    <p class="roundnum"><span class="roundnum__num">2</span></p>
-                    <i class="fas fa-list-ul"></i>
-                    <h4>Composez votre menu</h4>
-                </article>
-
-                <article class="infobutton">
-                    <p class="roundnum"><span class="roundnum__num">3</span></p>
-                    <i class="fas fa-store"></i>
-                    <h4>Dégustez au restaurant</h4>
-                </article>
+                
+                <aside class="infobutton">
+                    <input type="checkbox" id="checkinfo1"/>
+                    <label for="checkinfo1" class="labelinfo">
+                        <span class="roundnum">
+                            <span class="roundnum__num">1</span>
+                        </span>
+                        <i class="fas fa-mobile-alt"></i>
+                        <span class="sph4">Choisissez un restaurant</span>
+                    </label>
+                </aside>
+                
+                <aside class="infobutton">
+                    <input type="checkbox" id="checkinfo2"/>
+                    <label for="checkinfo2" class="labelinfo">
+                        <span class="roundnum">
+                            <span class="roundnum__num">2</span>
+                        </span>
+                        <i class="fas fa-list-ul"></i>
+                        <span class="sph4">Composez votre menu</span>
+                    </label>
+                </aside>
+                
+                <aside class="infobutton">
+                    <input type="checkbox" id="checkinfo3"/>
+                    <label for="checkinfo3" class="labelinfo">
+                        <span class="roundnum">
+                            <span class="roundnum__num">3</span>
+                        </span>
+                        <i class="fas fa-store"></i>
+                        <span class="sph4">Dégustez au restaurant</span>
+                    </label>
+                </aside>
+                
             </div>
         </section>
 
@@ -77,9 +95,13 @@
                             <p>Ménilmontant</p>
                         </div>
 
-                        <div class="like">
-                            <a href="#" onclick='return false;'></a>
-                            <i class="far fa-heart"></i><i class="fas fa-heart"></i>
+                        <div class="like" >
+                            <!-- <a href="#" onclick='return false;'></a> -->
+                            <input type="checkbox" id="checklike1"/>
+                            <label for="checklike1">
+                            <i class="far fa-heart"></i>
+                            <i class="fas fa-heart"></i>
+                            </label>
                         </div>
                     </div>
                 </article>
@@ -97,9 +119,13 @@
                             <p>Charonne</p>
                         </div>
 
-                        <div class="like">
-                            <a href="#" onclick='return false;'></a>
-                            <i class="far fa-heart"></i><i class="fas fa-heart"></i>
+                        <div class="like" >
+                            <!-- <a href="#" onclick='return false;'></a> -->
+                            <input type="checkbox" id="checklike2"/>
+                            <label for="checklike2">
+                            <i class="far fa-heart"></i>
+                            <i class="fas fa-heart"></i>
+                            </label>
                         </div>
                     </div>
                 </article>
@@ -116,9 +142,13 @@
                             <p>Cité Rouge</p>
                         </div>
 
-                        <div class="like">
-                            <a href="#" onclick='return false;'></a>
-                            <i class="far fa-heart"></i><i class="fas fa-heart"></i>
+                        <div class="like" >
+                            <!-- <a href="#" onclick='return false;'></a> -->
+                            <input type="checkbox" id="checklike3"/>
+                            <label for="checklike3">
+                            <i class="far fa-heart"></i>
+                            <i class="fas fa-heart"></i>
+                            </label>
                         </div>
                     </div>
                 </article>
@@ -135,9 +165,13 @@
                             <p>Folie-Méricourt</p>
                         </div>
 
-                        <div class="like">
-                            <a href="#" onclick="return false;"></a>
-                            <i class="far fa-heart"></i><i class="fas fa-heart"></i>
+                        <div class="like" >
+                            <!-- <a href="#" onclick='return false;'></a> -->
+                            <input type="checkbox" id="checklike4"/>
+                            <label for="checklike4">
+                            <i class="far fa-heart"></i>
+                            <i class="fas fa-heart"></i>
+                            </label>
                         </div>
                     </div>
                 </article>

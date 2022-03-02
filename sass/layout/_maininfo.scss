@@ -11,6 +11,7 @@
     flex-direction: column;
     background-color: $color-bk-light4;
     .info__buttons{
+        width: 100%;
         height: 250px;
         display: flex;
         flex-direction: column;
@@ -26,17 +27,23 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
             align-content: flex-start;
             height: auto;
             width: auto;
-            .infobutton {
-                height: 57px;
+            margin-top: 19px;
+            .infobutton{
                 width: 40%;
-                margin-right: 0%;
-                margin-left: 12px;
-                margin-bottom: 20px;
-            }   
+                margin-left: 5%;
+                margin-right: 5%;
+                .labelinfo{
+                    height: 57px;
+                    width: 100%;
+                    
+                    margin-bottom: 20px;
+                }
+            }
+               
         }
         
     }
@@ -45,17 +52,23 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
             align-content: flex-start;
             height: auto;
             width: 100%;
-            .infobutton {
-                height: 60px;
-                width: 30%;
-                margin-right: 0%;
-                margin-left: 12px;
-                margin-bottom: 20px;
+            margin-top: 22px;
+            .infobutton{
+                margin-right: 2%;
+                margin-left: 2%;
                 
+                width: 29%;
+                .labelinfo{
+                    
+                    margin-bottom: 20px;
+                    height: 60px;
+                    width: 100%;
+                    
+                }
             }
         }
     }

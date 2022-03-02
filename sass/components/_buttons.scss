@@ -1,40 +1,63 @@
 /* ******* boutons de la section information vus en page index***** */
+.info__buttons{
+         
+    .infobutton{
 
-.infobutton{
-    @include default-shadnrad;
-    display: flex;
-    width: 100%;
-    margin: auto;
-    height: 55px;
-    border: none;
-    align-items: center;
-    background-color: $color-bk-light3;
-    padding: 0;
-    &:hover, &:active{
-        background: rgb(147, 86, 220, 0.15); 
-    } 
-    .roundnum{
-        display: flex;            
-        width: 24px;
-        line-height: 24px;
-        justify-content: center;
-        align-content: center;
-        background-color: $color-prim;
-        border-radius: 12px; 
-        margin-left: -12px;
-        &__num{
-            color: $colortext3;
+        input{
+            /* masquage */
+            position: absolute;
+            left: -9999px;
+            &:checked + label{
+                background-color: rgb(147, 86, 220, 0.15);  /* petit changement au clic */
+            }
+            @media all and (min-width: 992px){
+                &:hover + label{
+                    background-color: rgb(147, 86, 220, 0.15);  /* petit changement au survol */
+                }
+            }
         }
-    }
-    .fas{
-        width: 23%;
-        text-align: center;
-        font-size: 1.3rem;
-        color: $colortext2;
-        margin-right: 5%;
-    }
+        
+        .labelinfo{
+        /* la zone de l'étiquette d'info */
+            display: flex;
+            position: relative;
+            cursor: default;
+            @include default-shadnrad;
+            width: 90vw;
+            margin: auto;
+            height: 55px;
+            justify-content: flex-start;
+            align-items: center;
+            border: none;
+            background-color: $color-bk-light3;
+            padding: 0;
+            .roundnum{
+                display: flex;            
+                width: 24px;
+                line-height: 24px;
+                justify-content: center;
+                align-content: center;
+                background-color: $color-prim;
+                border-radius: 12px; 
+                margin-left: -12px;
+                &__num{
+                    color: $colortext3;
+                }
+            }
+            .fas{
+                width: 23%;
+                text-align: center;
+                font-size: 1.3rem;
+                color: $colortext2;
+                margin-right: 5%;
+            }
+            .sph4{
+                max-width: max-content;
+                font-weight: 500;
+            }
+        }  
+    } 
 }
-
 /*bouton de commande fin de page des restos*/
 
 .buttonrnd{

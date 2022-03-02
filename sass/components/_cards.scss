@@ -74,21 +74,19 @@
 
 .info__buttons{
     .infobutton--menus{
-        position: relative;
-        display:flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        height: 70px;
-        width: 100%;
-        margin-bottom: 15px;
-        @include default-shadnrad;
-        overflow: hidden;
-        a{
-            &:focus .infobutton--menus{
+        .hidden{
+            position: absolute;
+            left: -9999px;
+        }
+        input{
+            position: absolute;
+            left: -9999px;
+            /* mise en application des effets au clic grace au checkbox : */
+            &:checked + label{
                 box-shadow: 2px 6px 2px $color-bk-light1;
                 transform: scale(1.01);
             }
-            &:focus + .card__body--menus .price-end .valid-plate{
+            &:checked + label .card__body--menus .price-end .valid-plate{
                     width: 65px;
                     margin-right: 0;
                     .rndv{
@@ -97,100 +95,116 @@
                         
                     }
             }
-        }
-        @media all and (min-width: 992px){
-            &:hover{
-                box-shadow: 2px 6px 2px $color-bk-light1;
-                transform: scale(1.01);
-            }
-            &:hover > .card__body--menus .price-end .valid-plate{
+            @media all and (min-width: 992px){
+                &:hover + label{
+                    box-shadow: 2px 6px 2px $color-bk-light1;
+                    transform: scale(1.01);
+                }
+                &:hover + label .card__body--menus .price-end .valid-plate{
                     width: 65px;
                     margin-right: 0;
                     .rndv{
                         transform: rotate(1turn);
                         
                     }
+                }
             }
         }
-        a{
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 10;    
-        } 
-        .card__body--menus{
-            background-color: $color-bk-light4;
-            display: flex;
+        label{
+            cursor: pointer;
+            position: relative;
+            display:flex;
             flex-direction: row;
-            justify-content: space-between;
-            align-content: center;
+            justify-content: flex-end;
             height: 70px;
             width: 100%;
-            .text{ 
-                height: inherit;                 
+            margin-bottom: 15px;
+            @include default-shadnrad;
+            overflow: hidden;
+        
+        
+            /* a{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 10;    
+            } */ 
+            .card__body--menus{
+                z-index: 10;
+                background-color: $color-bk-light4;
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 justify-content: space-between;
-                margin-left: 5%;
-                padding: 0;
-                white-space: nowrap;
-                overflow: hidden;
-                h4{
-                    position: relative;
-                    margin: 0;
-                    margin-top: 11px;
-                    width: 100%;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-                p{
-                    margin: 0;
-                    margin-bottom: 11px;
-                    font-weight: 300;
-                    width: 100%;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }  
-            }
-            .price-end{
-                display: flex;
-                .price{
+                align-content: center;
+                height: 70px;
+                width: 100%;
+                .text{ 
+                    height: inherit;                 
                     display: flex;
-                    flex-direction: column-reverse;
-                    font-weight: bold;
-                    margin-right: 13px;
-                    p{
+                    flex-direction: column;
+                    justify-content: space-between;
+                    margin-left: 5%;
+                    padding: 0;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    .sph4{
+                        position: relative;
+                        margin: 0;
+                        margin-top: 11px;
+                        width: 100%;
+                        white-space: nowrap;/* pas de retour ligne */
+                        overflow: hidden;
+                        text-overflow: ellipsis;/* coupure du texte recouvert avec ... */
+                        font-weight: 500;
+                    }
+                    .spp{
+                        margin: 0;
                         margin-bottom: 11px;
+                        font-weight: 300;
+                        width: 100%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }  
                 }
-                .valid-plate{
-                    margin-right:-65px;
-                    height: 70px;
-                    width:65px;
-                    background-color: $color-tert;
+                .price-end{
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    transition: all 850ms ease-in-out 50ms;
-                    .rndv{
+                    .price{
+                        display: flex;
+                        flex-direction: column-reverse;
+                        font-weight: bold;
+                        margin-right: 13px;
+                        .spprice{
+                            margin-bottom: 11px;
+                        }  
+                    }
+                    .valid-plate{
+                        margin-right:-65px;
+                        height: 70px;
+                        width:65px;
+                        background-color: $color-tert;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        
-                        
-                        background-color: $color-bk-light4;
-                        width: 24px;
-                        height: 24px;
-                        border-radius: 50%;
-                        transition: transform 750ms linear 150ms;
-                        .fas{
-                            font-size: 14px;
-                            color: $color-tert;
-                            width: 14px;                 
+                        transition: all 850ms ease-in-out 50ms;
+                        .rndv{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            
+                            
+                            background-color: $color-bk-light4;
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            transition: transform 750ms linear 150ms;
+                            .fas{
+                                font-size: 14px;
+                                color: $color-tert;
+                                width: 14px;                 
+                            }
                         }
                     }
                 }

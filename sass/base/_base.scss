@@ -8,8 +8,11 @@
     padding: 0;
 }
 
+
 body{
+    max-width: 2000px; /* éviter l'étirement excessif sur 4k et autres */
     width: 100%;
+    
     font-family: "Roboto", sans-serif;
     letter-spacing: -0.2px; /* on desserre un peu */
     @media all and (min-width: 769px) and (max-width: 992px){
@@ -18,8 +21,7 @@ body{
         background-color: $color-bk-light1;
     }
     @media all and (min-width: 992px){
-        max-width: 2000px;
-        width: 80%;
+        width: 80%; /* reserrer la vue */
         margin: auto;
         background-color: $color-bk-light1;
     }
@@ -32,6 +34,7 @@ h1{
 header, main, footer{
     width: 100%; /* important pour maitriser les positions dans la page */
 }
+
 
 a{
     text-decoration: none;

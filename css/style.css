@@ -5,7 +5,9 @@
 /****************************************/
 /* import de police googlefonts du site */
 /****************************************/
+/* police ENSEIGNE */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+/* police courante paragraphes */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
 /* ************************** */
 /* *géneralités remarquables* */
@@ -19,6 +21,8 @@
 }
 
 body {
+  max-width: 2000px;
+  /* éviter l'étirement excessif sur 4k et autres */
   width: 100%;
   font-family: "Roboto", sans-serif;
   letter-spacing: -0.2px;
@@ -33,8 +37,8 @@ body {
 }
 @media all and (min-width: 992px) {
   body {
-    max-width: 2000px;
     width: 80%;
+    /* reserrer la vue */
     margin: auto;
     background-color: #c0c0c0;
   }
@@ -54,9 +58,9 @@ a {
   color: inherit;
 }
 
-/* ****************************** */
-/* ******** animations ********** */
-/* ****************************** */
+/* **************************************** */
+/* ******** animations keyframes ********** */
+/* **************************************** */
 /* loader animation du spinner bordure, rotation, et zoom sur deux tours*/
 @-webkit-keyframes mouvim {
   0% {
@@ -175,7 +179,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   -webkit-animation-name: colorbk;
           animation-name: colorbk;
   /*animation bkground loader*/
@@ -219,22 +223,38 @@ a {
 }
 
 /* ******* boutons de la section information vus en page index***** */
-.infobutton {
+.info__buttons .infobutton input {
+  /* masquage */
+  position: absolute;
+  left: -9999px;
+}
+.info__buttons .infobutton input:checked + label {
+  background-color: rgba(147, 86, 220, 0.15);
+  /* petit changement au clic */
+}
+@media all and (min-width: 992px) {
+  .info__buttons .infobutton input:hover + label {
+    background-color: rgba(147, 86, 220, 0.15);
+    /* petit changement au survol */
+  }
+}
+.info__buttons .infobutton .labelinfo {
+  /* la zone de l'étiquette d'info */
+  display: flex;
+  position: relative;
+  cursor: default;
   box-shadow: 0.5px 2px 5px #c0c0c0;
   border-radius: 17px;
-  display: flex;
-  width: 100%;
+  width: 90vw;
   margin: auto;
   height: 55px;
-  border: none;
+  justify-content: flex-start;
   align-items: center;
+  border: none;
   background-color: #f2f2f2;
   padding: 0;
 }
-.infobutton:hover, .infobutton:active {
-  background: rgba(147, 86, 220, 0.15);
-}
-.infobutton .roundnum {
+.info__buttons .infobutton .labelinfo .roundnum {
   display: flex;
   width: 24px;
   line-height: 24px;
@@ -244,15 +264,21 @@ a {
   border-radius: 12px;
   margin-left: -12px;
 }
-.infobutton .roundnum__num {
+.info__buttons .infobutton .labelinfo .roundnum__num {
   color: #ffffff;
 }
-.infobutton .fas {
+.info__buttons .infobutton .labelinfo .fas {
   width: 23%;
   text-align: center;
   font-size: 1.3rem;
   color: #686868;
   margin-right: 5%;
+}
+.info__buttons .infobutton .labelinfo .sph4 {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  font-weight: 500;
 }
 
 /*bouton de commande fin de page des restos*/
@@ -371,7 +397,42 @@ a {
 }
 
 /*carte-bouton élément de menu à choisir dans pages resto*/
-.info__buttons .infobutton--menus {
+.info__buttons .infobutton--menus .hidden {
+  position: absolute;
+  left: -9999px;
+}
+.info__buttons .infobutton--menus input {
+  position: absolute;
+  left: -9999px;
+  /* mise en application des effets au clic grace au checkbox : */
+}
+.info__buttons .infobutton--menus input:checked + label {
+  box-shadow: 2px 6px 2px #c0c0c0;
+  transform: scale(1.01);
+}
+.info__buttons .infobutton--menus input:checked + label .card__body--menus .price-end .valid-plate {
+  width: 65px;
+  margin-right: 0;
+}
+.info__buttons .infobutton--menus input:checked + label .card__body--menus .price-end .valid-plate .rndv {
+  transform: rotate(1turn);
+  margin: auto;
+}
+@media all and (min-width: 992px) {
+  .info__buttons .infobutton--menus input:hover + label {
+    box-shadow: 2px 6px 2px #c0c0c0;
+    transform: scale(1.01);
+  }
+  .info__buttons .infobutton--menus input:hover + label .card__body--menus .price-end .valid-plate {
+    width: 65px;
+    margin-right: 0;
+  }
+  .info__buttons .infobutton--menus input:hover + label .card__body--menus .price-end .valid-plate .rndv {
+    transform: rotate(1turn);
+  }
+}
+.info__buttons .infobutton--menus label {
+  cursor: pointer;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -382,41 +443,17 @@ a {
   box-shadow: 0.5px 2px 5px #c0c0c0;
   border-radius: 17px;
   overflow: hidden;
+  /* a{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;    
+  } */
 }
-.info__buttons .infobutton--menus a:focus .infobutton--menus {
-  box-shadow: 2px 6px 2px #c0c0c0;
-  transform: scale(1.01);
-}
-.info__buttons .infobutton--menus a:focus + .card__body--menus .price-end .valid-plate {
-  width: 65px;
-  margin-right: 0;
-}
-.info__buttons .infobutton--menus a:focus + .card__body--menus .price-end .valid-plate .rndv {
-  transform: rotate(1turn);
-  margin: auto;
-}
-@media all and (min-width: 992px) {
-  .info__buttons .infobutton--menus:hover {
-    box-shadow: 2px 6px 2px #c0c0c0;
-    transform: scale(1.01);
-  }
-  .info__buttons .infobutton--menus:hover > .card__body--menus .price-end .valid-plate {
-    width: 65px;
-    margin-right: 0;
-  }
-  .info__buttons .infobutton--menus:hover > .card__body--menus .price-end .valid-plate .rndv {
-    transform: rotate(1turn);
-  }
-}
-.info__buttons .infobutton--menus a {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+.info__buttons .infobutton--menus label .card__body--menus {
   z-index: 10;
-}
-.info__buttons .infobutton--menus .card__body--menus {
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
@@ -425,7 +462,7 @@ a {
   height: 70px;
   width: 100%;
 }
-.info__buttons .infobutton--menus .card__body--menus .text {
+.info__buttons .infobutton--menus label .card__body--menus .text {
   height: inherit;
   display: flex;
   flex-direction: column;
@@ -435,16 +472,19 @@ a {
   white-space: nowrap;
   overflow: hidden;
 }
-.info__buttons .infobutton--menus .card__body--menus .text h4 {
+.info__buttons .infobutton--menus label .card__body--menus .text .sph4 {
   position: relative;
   margin: 0;
   margin-top: 11px;
   width: 100%;
   white-space: nowrap;
+  /* pas de retour ligne */
   overflow: hidden;
   text-overflow: ellipsis;
+  /* coupure du texte recouvert avec ... */
+  font-weight: 500;
 }
-.info__buttons .infobutton--menus .card__body--menus .text p {
+.info__buttons .infobutton--menus label .card__body--menus .text .spp {
   margin: 0;
   margin-bottom: 11px;
   font-weight: 300;
@@ -453,19 +493,19 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.info__buttons .infobutton--menus .card__body--menus .price-end {
+.info__buttons .infobutton--menus label .card__body--menus .price-end {
   display: flex;
 }
-.info__buttons .infobutton--menus .card__body--menus .price-end .price {
+.info__buttons .infobutton--menus label .card__body--menus .price-end .price {
   display: flex;
   flex-direction: column-reverse;
   font-weight: bold;
   margin-right: 13px;
 }
-.info__buttons .infobutton--menus .card__body--menus .price-end .price p {
+.info__buttons .infobutton--menus label .card__body--menus .price-end .price .spprice {
   margin-bottom: 11px;
 }
-.info__buttons .infobutton--menus .card__body--menus .price-end .valid-plate {
+.info__buttons .infobutton--menus label .card__body--menus .price-end .valid-plate {
   margin-right: -65px;
   height: 70px;
   width: 65px;
@@ -475,7 +515,7 @@ a {
   align-items: center;
   transition: all 850ms ease-in-out 50ms;
 }
-.info__buttons .infobutton--menus .card__body--menus .price-end .valid-plate .rndv {
+.info__buttons .infobutton--menus label .card__body--menus .price-end .valid-plate .rndv {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -485,7 +525,7 @@ a {
   border-radius: 50%;
   transition: transform 750ms linear 150ms;
 }
-.info__buttons .infobutton--menus .card__body--menus .price-end .valid-plate .rndv .fas {
+.info__buttons .infobutton--menus label .card__body--menus .price-end .valid-plate .rndv .fas {
   font-size: 14px;
   color: #99E2D0;
   width: 14px;
@@ -500,34 +540,35 @@ a {
   height: 100%;
   font-size: 30px;
 }
-.like a {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 10;
+.like label {
+  cursor: pointer;
 }
-.like a:focus + .far {
+.like input {
+  width: 0;
+  height: 0;
+  display: none;
+}
+.like input:checked + label > .far {
   color: transparent;
 }
-.like a:focus ~ .fas {
-  transform: scale(0.95);
+.like input:checked + label > .fas {
+  transform: scale(1);
 }
 @media all and (min-width: 992px) {
-  .like a:hover + .far {
+  .like input:hover + label > .far {
     color: transparent;
   }
-  .like a:hover ~ .fas {
-    transform: scale(0.95);
+  .like input:hover + label > .fas {
+    transform: scale(1);
   }
 }
 .like .far {
-  /* z-index: 10; */
+  z-index: 20;
   position: absolute;
   transition: all 100ms linear 600ms;
 }
 .like .fas {
+  width: auto;
   transition: all 900ms ease-in-out 0ms;
   position: relative;
   transform: scale(0.01);
@@ -565,17 +606,29 @@ a {
   left: 25px;
   font-size: 150%;
 }
+.head input {
+  position: absolute;
+  left: -9999px;
+}
+.head input:checked + label {
+  background-color: rgba(147, 86, 220, 0.15);
+  /* petit changement au clic */
+}
+@media all and (min-width: 992px) {
+  .head input:hover + label {
+    background-color: rgba(147, 86, 220, 0.15);
+    /* petit changement au survol */
+  }
+}
 .head .head__geo {
-  /*bandeau localisation*/
+  /*bandeau localisation et label pour clic*/
+  cursor: pointer;
+  position: relative;
   width: 100%;
   text-align: center;
   margin-top: 0px;
   line-height: 3em;
   background-color: #e7e7e7;
-}
-.head .head__geo:hover, .head .head__geo:active {
-  background: rgba(147, 86, 220, 0.15);
-  /* petit changement au survol */
 }
 .head .head__geo span {
   margin-left: 12px;
@@ -588,7 +641,6 @@ a {
   margin-bottom: 2px;
 }
 .head .parag {
-  width: auto;
   font-size: larger;
   text-align: center;
   font-weight: 300;
@@ -634,7 +686,7 @@ a {
     align-self: flex-start;
   }
   .head .parag {
-    text-align: left;
+    /* text-align: left; */
     margin-left: 5%;
   }
 }
@@ -657,6 +709,7 @@ a {
   background-color: #ffffff;
 }
 .info .info__buttons {
+  width: 100%;
   height: 250px;
   display: flex;
   flex-direction: column;
@@ -670,16 +723,20 @@ a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-content: flex-start;
     height: auto;
     width: auto;
+    margin-top: 19px;
   }
   .info .info__buttons .infobutton {
-    height: 57px;
     width: 40%;
-    margin-right: 0%;
-    margin-left: 12px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .info .info__buttons .infobutton .labelinfo {
+    height: 57px;
+    width: 100%;
     margin-bottom: 20px;
   }
 }
@@ -688,17 +745,21 @@ a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-content: flex-start;
     height: auto;
     width: 100%;
+    margin-top: 22px;
   }
   .info .info__buttons .infobutton {
-    height: 60px;
-    width: 30%;
-    margin-right: 0%;
-    margin-left: 12px;
+    margin-right: 2%;
+    margin-left: 2%;
+    width: 29%;
+  }
+  .info .info__buttons .infobutton .labelinfo {
     margin-bottom: 20px;
+    height: 60px;
+    width: 100%;
   }
 }
 
@@ -798,6 +859,7 @@ a {
 .pages-options > * {
   width: 90%;
   margin: auto;
+  height: auto;
 }
 .pages-options .options__header {
   display: flex;

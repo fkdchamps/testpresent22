@@ -6,7 +6,7 @@
     align-content: center;
     min-width: 100%;
     height: auto;
-    max-height: 45vw;
+    max-height: 45vw;/* cette valeur avec le top sur le formulaire qui suit permet d'avoir un peu de vue sur les menus */
     overflow: hidden;
     
     img{
@@ -40,8 +40,10 @@
     top: -13vw;
     border-radius: 40px 40px 0px 0px;
     padding-top: 25px;
-    padding-bottom: 30px;
     margin-bottom: -13vw;
+    
+
+    
     .options__header{
         display: flex;
         justify-content: space-between;
@@ -55,9 +57,8 @@
             font-family: "Shrikhand",sans-serif;
             font-weight: normal;  
         }
-        
     }
-    #all-parts{
+    #all-parts{ /* on gère les menus en 3 parties dans une grande */
         >*{
             opacity: 0;
             height: auto;
@@ -65,12 +66,12 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            animation-name: appear;    
+            animation-name: appear;/* appel de la keyframe */   
             animation-duration: 2500ms;
             animation-timing-function: linear;
             animation-iteration-count: 1;
-            animation-fill-mode: forwards; 
-        }   
+            animation-fill-mode: forwards;/* rester sur l'état final */
+        }  
         #first-part{    
             animation-delay: 1000ms;
         }
@@ -131,7 +132,7 @@
     .command{
         width: 55%;
         margin-top: 22px;
-        margin-bottom: 22px;
+        margin-bottom: 38px;
         text-align: center;
 
         /*responsive tablette*/
@@ -142,5 +143,6 @@
             max-width: 25%;
         }
     }
-       
+      
 }
+

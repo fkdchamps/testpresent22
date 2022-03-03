@@ -53,6 +53,9 @@ header, main, footer {
   /* important pour maitriser les positions dans la page */
 }
 
+/* main{
+    padding-bottom: -13vw;
+} */
 a {
   text-decoration: none;
   color: inherit;
@@ -69,12 +72,12 @@ a {
   50% {
     transform: rotate(1turn) scale(1.1);
     border-left: 30px solid #99E2D0;
-    border-right: 30px solid #9356dc;
+    border-right: 30px solid #FF79DA;
   }
   100% {
     transform: rotate(2turn) scale(0.1);
     border-left: 10px solid #99E2D0;
-    border-right: 10px solid #9356dc;
+    border-right: 10px solid #FF79DA;
   }
 }
 @keyframes mouvim {
@@ -84,12 +87,12 @@ a {
   50% {
     transform: rotate(1turn) scale(1.1);
     border-left: 30px solid #99E2D0;
-    border-right: 30px solid #9356dc;
+    border-right: 30px solid #FF79DA;
   }
   100% {
     transform: rotate(2turn) scale(0.1);
     border-left: 10px solid #99E2D0;
-    border-right: 10px solid #9356dc;
+    border-right: 10px solid #FF79DA;
   }
 }
 /* loader apparition arrière plan et disparition */
@@ -103,7 +106,7 @@ a {
     width: inherit;
     opacity: 0.99;
     z-index: 100;
-    background-color: #FF79DA;
+    background-color: #9356dc;
   }
   99% {
     width: inherit;
@@ -126,7 +129,7 @@ a {
     width: inherit;
     opacity: 0.99;
     z-index: 100;
-    background-color: #FF79DA;
+    background-color: #9356dc;
   }
   99% {
     width: inherit;
@@ -196,7 +199,7 @@ a {
   position: relative;
   margin: auto;
   border-left: 10px solid #99E2D0;
-  border-right: 10px solid #9356dc;
+  border-right: 10px solid #FF79DA;
   border-radius: 50%;
   width: 270px;
   height: 270px;
@@ -278,13 +281,15 @@ a {
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
+  /* n'occupera pas toute la largeur de la ligne */
   font-weight: 500;
 }
 
 /*bouton de commande fin de page des restos*/
 .buttonrnd {
+  /* bouton de commande et bouton d'explo */
   display: inline-block;
-  background: linear-gradient(-10deg, #9356dc, #FF79DA);
+  background: linear-gradient(-5deg, #9356dc 40%, #FF79DA);
   padding: auto;
   padding-top: 0.9em;
   padding-bottom: 0.9em;
@@ -304,8 +309,9 @@ a {
 
 /*bouton de navigation explorer les restos*/
 .headerbutton {
+  /* bouton de commande et bouton d'explo */
   display: inline-block;
-  background: linear-gradient(-10deg, #9356dc, #FF79DA);
+  background: linear-gradient(-5deg, #9356dc 40%, #FF79DA);
   padding: auto;
   padding-top: 0.9em;
   padding-bottom: 0.9em;
@@ -399,6 +405,7 @@ a {
 /*carte-bouton élément de menu à choisir dans pages resto*/
 .info__buttons .infobutton--menus .hidden {
   position: absolute;
+  /* une façon de cacher */
   left: -9999px;
 }
 .info__buttons .infobutton--menus input {
@@ -506,7 +513,9 @@ a {
   margin-bottom: 11px;
 }
 .info__buttons .infobutton--menus label .card__body--menus .price-end .valid-plate {
+  /* le tiroir qui apparait si le menu est validé */
   margin-right: -65px;
+  /* n'apparait pas au départ */
   height: 70px;
   width: 65px;
   background-color: #99E2D0;
@@ -516,13 +525,16 @@ a {
   transition: all 850ms ease-in-out 50ms;
 }
 .info__buttons .infobutton--menus label .card__body--menus .price-end .valid-plate .rndv {
+  /* le cadre rond autour de l'icone */
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
   width: 24px;
+  /* carré pour obtenir la bordure circulaire */
   height: 24px;
   border-radius: 50%;
+  /* forme cercle */
   transition: transform 750ms linear 150ms;
 }
 .info__buttons .infobutton--menus label .card__body--menus .price-end .valid-plate .rndv .fas {
@@ -572,7 +584,7 @@ a {
   transition: all 900ms ease-in-out 0ms;
   position: relative;
   transform: scale(0.01);
-  background: linear-gradient(#9356dc, #FF79DA);
+  background: linear-gradient(-8deg, #9356dc 40%, #FF79DA);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
@@ -602,12 +614,14 @@ a {
 }
 .head__logo__arrow {
   position: absolute;
+  /* la fleche toujours en haut à gauche */
   top: 26px;
   left: 25px;
   font-size: 150%;
 }
 .head input {
   position: absolute;
+  /* pour le sortir du champ */
   left: -9999px;
 }
 .head input:checked + label {
@@ -623,6 +637,7 @@ a {
 .head .head__geo {
   /*bandeau localisation et label pour clic*/
   cursor: pointer;
+  /* la main */
   position: relative;
   width: 100%;
   text-align: center;
@@ -685,10 +700,6 @@ a {
     margin-left: 5%;
     align-self: flex-start;
   }
-  .head .parag {
-    /* text-align: left; */
-    margin-left: 5%;
-  }
 }
 
 /******* pas d'ombre en bannière sur les pages des restos: *********/
@@ -700,6 +711,7 @@ a {
 /**********info **************/
 /*****************************/
 .info {
+  /* le cadre */
   width: 100%;
   padding-left: 5%;
   padding-right: 5%;
@@ -709,6 +721,7 @@ a {
   background-color: #ffffff;
 }
 .info .info__buttons {
+  /* le cadre des 3 panneaux d'info */
   width: 100%;
   height: 250px;
   display: flex;
@@ -719,6 +732,9 @@ a {
   margin-top: 15px;
 }
 @media all and (min-width: 769px) and (max-width: 992px) {
+  .info {
+    /* sur tablette on donne la possibilité de retour ligne aux panneaux d'info (2 en haut et 1 dessous)*/
+  }
   .info .info__buttons {
     display: flex;
     flex-direction: row;
@@ -741,6 +757,9 @@ a {
   }
 }
 @media all and (min-width: 992px) {
+  .info {
+    /* adaptatif sur grands ecrans */
+  }
   .info .info__buttons {
     display: flex;
     flex-direction: row;
@@ -783,6 +802,7 @@ a {
   justify-content: space-between;
   flex-wrap: wrap;
   width: 90%;
+  /* cards centrées en largeur sur mobile */
   margin: auto;
   height: auto;
   margin-top: 22px;
@@ -793,6 +813,7 @@ a {
   }
   .options__cards .card {
     width: 45%;
+    /* cards rangées deux par deux sur tablette */
   }
   .options__cards .card img {
     width: 110%;
@@ -806,6 +827,7 @@ a {
   .options__cards .card {
     margin: 0;
     width: 23%;
+    /* par 4 sur grands ecrans */
     height: 255px;
   }
   .options__cards .card .card__pic {
@@ -824,6 +846,7 @@ a {
   min-width: 100%;
   height: auto;
   max-height: 45vw;
+  /* cette valeur avec le top sur le formulaire qui suit permet d'avoir un peu de vue sur les menus */
   overflow: hidden;
   /*responsive tablette*/
 }
@@ -853,7 +876,6 @@ a {
   top: -13vw;
   border-radius: 40px 40px 0px 0px;
   padding-top: 25px;
-  padding-bottom: 30px;
   margin-bottom: -13vw;
 }
 .pages-options > * {
@@ -875,6 +897,9 @@ a {
   font-family: "Shrikhand", sans-serif;
   font-weight: normal;
 }
+.pages-options #all-parts {
+  /* on gère les menus en 3 parties dans une grande */
+}
 .pages-options #all-parts > * {
   opacity: 0;
   height: auto;
@@ -884,6 +909,7 @@ a {
   width: 100%;
   -webkit-animation-name: appear;
           animation-name: appear;
+  /* appel de la keyframe */
   -webkit-animation-duration: 2500ms;
           animation-duration: 2500ms;
   -webkit-animation-timing-function: linear;
@@ -892,6 +918,7 @@ a {
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+  /* rester sur l'état final */
 }
 .pages-options #all-parts #first-part {
   -webkit-animation-delay: 1000ms;
@@ -957,7 +984,7 @@ a {
 .pages-options .command {
   width: 55%;
   margin-top: 22px;
-  margin-bottom: 22px;
+  margin-bottom: 38px;
   text-align: center;
   /*responsive tablette*/
 }
@@ -978,6 +1005,7 @@ a {
   background-color: #383838;
   color: #ffffff;
   margin-top: 0;
+  margin-bottom: -13vw;
 }
 .foot > * {
   width: 90%;
@@ -985,6 +1013,7 @@ a {
 }
 .foot__title {
   font-family: "Shrikhand";
+  /* du texte plus léger à charger que l'icone png */
   font-size: 0.8em;
 }
 .foot a {
@@ -993,6 +1022,7 @@ a {
 .foot ul {
   padding: 0;
   list-style: none;
+  /* pas de puce ou n° */
   line-height: 1.8em;
 }
 .foot ul i {

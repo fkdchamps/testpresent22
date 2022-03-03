@@ -10,12 +10,12 @@
     50%{
         transform: rotate(1turn) scale(1.1);
         border-left: 30px solid $color-tert;
-        border-right: 30px solid $color-prim;
+        border-right: 30px solid $color-sec;
     }
     100%{
         transform: rotate(2turn) scale(0.1);
         border-left: 10px solid $color-tert;
-        border-right: 10px solid $color-prim;
+        border-right: 10px solid $color-sec;
     }
 }
 
@@ -30,7 +30,7 @@
         width: inherit;
         opacity: 0.99;
         z-index: 100;
-        background-color: $color-sec;
+        background-color: $color-prim;
     }
     99%{
         width: inherit;

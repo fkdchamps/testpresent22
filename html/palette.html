@@ -20,9 +20,9 @@
         </div>
     </header>
 
-    <main>
+    <main class="main">
         <div class="page-picture">
-            <img src="../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">  
+            <img src="../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="vue d'assiette d'exemple sur la table">  
         </div>
 
         <form class="pages-options"> <!-- futur formulaire de commande -->
@@ -44,9 +44,9 @@
                         
                             <article class="infobutton infobutton--menus">
                                 <h3 class="hidden">item</h3><!-- h3 purement semantique pour l'article -->
-                                <input type="checkbox" id="checkplate1"/><!-- checkbox pour le clic -->
+                                <input type="checkbox" id="checkplate1"/><!-- checkbox hack pour le clic -->
                                 <label for="checkplate1">
-                                    <span class="card__body card__body--menus">
+                                    <span class="card__body card__body--menus"><!-- pas de div p ou autres uniquement span toléré validation -->
                                         <span class="text">
                                             <span class="sph4">Fricassée d'escargot</span>
                                             <span class="spp">Au piment d'Espelette</span>
@@ -250,7 +250,7 @@
         </form>     
     </main>
     
-    <footer class="foot">
+    <footer class="foot" >
         <div class="foot__title">
             <h2>ohmyfood</h2>
         </div>

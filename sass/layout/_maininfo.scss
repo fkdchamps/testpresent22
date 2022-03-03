@@ -2,7 +2,7 @@
 /**********info **************/
 /*****************************/
 
-.info{
+.info{ /* le cadre */
     width: 100%;
     padding-left: 5%;
     padding-right: 5%;
@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     background-color: $color-bk-light4;
-    .info__buttons{
+    .info__buttons{ /* le cadre des 3 panneaux d'info */
         width: 100%;
         height: 250px;
         display: flex;
@@ -22,7 +22,7 @@
         
     }  
     @media all and (min-width: 769px) and (max-width: 992px){
-        
+        /* sur tablette on donne la possibilité de retour ligne aux panneaux d'info (2 en haut et 1 dessous)*/
         & .info__buttons{
             display: flex;
             flex-direction: row;
@@ -48,6 +48,7 @@
         
     }
     @media all and (min-width: 992px){
+        /* adaptatif sur grands ecrans */
         & .info__buttons{
             display: flex;
             flex-direction: row;

@@ -75,7 +75,7 @@
 .info__buttons{
     .infobutton--menus{
         .hidden{
-            position: absolute;
+            position: absolute;/* une façon de cacher */
             left: -9999px;
         }
         input{
@@ -180,8 +180,8 @@
                             margin-bottom: 11px;
                         }  
                     }
-                    .valid-plate{
-                        margin-right:-65px;
+                    .valid-plate{/* le tiroir qui apparait si le menu est validé */
+                        margin-right:-65px;/* n'apparait pas au départ */
                         height: 70px;
                         width:65px;
                         background-color: $color-tert;
@@ -189,16 +189,16 @@
                         justify-content: center;
                         align-items: center;
                         transition: all 850ms ease-in-out 50ms;
-                        .rndv{
+                        .rndv{/* le cadre rond autour de l'icone */
                             display: flex;
                             justify-content: center;
                             align-items: center;
                             
                             
                             background-color: $color-bk-light4;
-                            width: 24px;
+                            width: 24px;/* carré pour obtenir la bordure circulaire */
                             height: 24px;
-                            border-radius: 50%;
+                            border-radius: 50%;/* forme cercle */
                             transition: transform 750ms linear 150ms;
                             .fas{
                                 font-size: 14px;

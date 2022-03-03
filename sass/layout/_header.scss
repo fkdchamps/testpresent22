@@ -17,7 +17,7 @@
             width: 45%;   
         }
         &__arrow{
-            position: absolute;
+            position: absolute;/* la fleche toujours en haut à gauche */
             top:26px;
             left: 25px;
             font-size: 150%;
@@ -25,7 +25,7 @@
     }
 
     input{
-        position: absolute;
+        position: absolute;/* pour le sortir du champ */
         left: -9999px;
         &:checked + label{
             background-color: rgb(147, 86, 220, 0.15);  /* petit changement au clic */
@@ -39,7 +39,7 @@
     }
     
     .head__geo{/*bandeau localisation et label pour clic*/
-        cursor: pointer;
+        cursor: pointer;/* la main */
         position: relative;
         width: 100%;
         text-align: center;
@@ -61,7 +61,6 @@
         margin-bottom: 2px;    
     }
     .parag{
-        
         font-size: larger;
         text-align: center;
         font-weight: 300;
@@ -108,10 +107,6 @@
             padding: 0;
             margin-left: 5%;
             align-self: flex-start;
-        }
-        .parag{
-            /* text-align: left; */
-            margin-left: 5%;
         }
     }
 }

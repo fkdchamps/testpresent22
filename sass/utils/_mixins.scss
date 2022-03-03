@@ -5,15 +5,16 @@
     
 }
 
+
 @mixin most-block-display{
     display: flex;
     flex-direction: column;
     background-color: $color-bk-light3;
 }
 
-@mixin rndbutton{
+@mixin rndbutton{/* bouton de commande et bouton d'explo */
     display:inline-block;
-    background: linear-gradient(-10deg, $color-prim, $color-sec);
+    background: linear-gradient(-5deg, $color-prim 40%, $color-sec);
     padding: auto;
     padding-top: 0.9em;
     padding-bottom: 0.9em;

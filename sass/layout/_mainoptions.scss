@@ -15,7 +15,7 @@
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
-        width: 90%;
+        width: 90%; /* cards centrées en largeur sur mobile */
         margin: auto;
         height: auto;
         margin-top: 22px;
@@ -25,7 +25,7 @@
         &__cards{
             justify-content: space-between;
             .card{
-            width: 45%;
+            width: 45%; /* cards rangées deux par deux sur tablette */
                 img{
                     width: 110%;
                 }
@@ -38,7 +38,7 @@
             justify-items: space-between;
             .card{
             margin: 0;
-            width: 23%;
+            width: 23%;/* par 4 sur grands ecrans */
             height: 255px;
             .card__pic{
                 height: 165px;

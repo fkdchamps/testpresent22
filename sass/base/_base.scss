@@ -10,6 +10,7 @@
 
 
 body{
+    
     max-width: 2000px; /* éviter l'étirement excessif sur 4k et autres */
     width: 100%;
     
@@ -25,6 +26,7 @@ body{
         margin: auto;
         background-color: $color-bk-light1;
     }
+    
 }
 
 h1{
@@ -33,8 +35,14 @@ h1{
 
 header, main, footer{
     width: 100%; /* important pour maitriser les positions dans la page */
+    
 }
 
+
+
+/* main{
+    padding-bottom: -13vw;
+} */
 
 a{
     text-decoration: none;

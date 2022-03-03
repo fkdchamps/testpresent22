@@ -1,16 +1,19 @@
 .foot{
+    
+    
     padding-top: 12px;
     padding-bottom: 50px;
     background-color: $color-bk-light0;
     color: $colortext3;
     margin-top: 0;
+    margin-bottom: -13vw;
     
     &>*{
         width: 90%;
         margin: auto;
     }
        &__title{  
-        font-family: "Shrikhand";
+        font-family: "Shrikhand";/* du texte plus léger à charger que l'icone png */
         font-size: 0.8em;
     }
     a{
@@ -18,7 +21,7 @@
     }
     ul{
         padding: 0;
-        list-style: none;
+        list-style: none;/* pas de puce ou n° */
         line-height: 1.8em;
         i{
             width: 15px;

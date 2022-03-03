@@ -46,7 +46,7 @@
         position: relative;
         
         transform: scale(0.01);
-        background: linear-gradient($color-prim, $color-sec);
+        background: linear-gradient(-8deg, $color-prim 40%, $color-sec);
         background-clip: text;
         color: transparent;
                 

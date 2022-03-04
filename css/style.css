@@ -290,7 +290,6 @@ a {
   /* bouton de commande et bouton d'explo */
   display: inline-block;
   background: linear-gradient(-5deg, #9356dc 40%, #FF79DA);
-  padding: auto;
   padding-top: 0.9em;
   padding-bottom: 0.9em;
   width: 100%;
@@ -312,7 +311,6 @@ a {
   /* bouton de commande et bouton d'explo */
   display: inline-block;
   background: linear-gradient(-5deg, #9356dc 40%, #FF79DA);
-  padding: auto;
   padding-top: 0.9em;
   padding-bottom: 0.9em;
   width: 100%;
@@ -822,7 +820,7 @@ a {
 @media all and (min-width: 992px) {
   .options__cards {
     justify-content: space-between;
-    justify-items: space-between;
+    /* justify-items: space-between; */
   }
   .options__cards .card {
     margin: 0;

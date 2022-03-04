@@ -35,7 +35,7 @@
     @media all and (min-width: 992px){
         &__cards{
             justify-content: space-between;
-            justify-items: space-between;
+            /* justify-items: space-between; */
             .card{
             margin: 0;
             width: 23%;/* par 4 sur grands ecrans */

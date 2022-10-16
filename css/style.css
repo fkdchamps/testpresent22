@@ -289,7 +289,7 @@ a {
 .buttonrnd {
   /* bouton de commande et bouton d'explo */
   display: inline-block;
-  background: linear-gradient(-5deg, #9356dc 40%, #FF79DA);
+  background: linear-gradient(-5deg, #9356dc 40%, #fdff79);
   padding-top: 0.9em;
   padding-bottom: 0.9em;
   width: 100%;

@@ -106,7 +106,7 @@ a {
     width: inherit;
     opacity: 0.99;
     z-index: 100;
-    background-color: #9356dc;
+    background-color: #dc6856;
   }
   99% {
     width: inherit;
@@ -129,7 +129,7 @@ a {
     width: inherit;
     opacity: 0.99;
     z-index: 100;
-    background-color: #9356dc;
+    background-color: #dc6856;
   }
   99% {
     width: inherit;
@@ -178,7 +178,7 @@ a {
   height: 100vh;
   /* couverture de l'ecran */
   margin: 0;
-  background-color: #9356dc;
+  background-color: #dc6856;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -263,7 +263,7 @@ a {
   line-height: 24px;
   justify-content: center;
   align-content: center;
-  background-color: #9356dc;
+  background-color: #dc6856;
   border-radius: 12px;
   margin-left: -12px;
 }
@@ -289,7 +289,7 @@ a {
 .buttonrnd {
   /* bouton de commande et bouton d'explo */
   display: inline-block;
-  background: linear-gradient(-5deg, #9356dc 40%, #fdff79);
+  background: linear-gradient(-5deg, #dc6856 40%, #fdff79);
   padding-top: 0.9em;
   padding-bottom: 0.9em;
   width: 100%;
@@ -310,7 +310,7 @@ a {
 .headerbutton {
   /* bouton de commande et bouton d'explo */
   display: inline-block;
-  background: linear-gradient(-5deg, #9356dc 40%, #fdff79);
+  background: linear-gradient(-5deg, #dc6856 40%, #fdff79);
   padding-top: 0.9em;
   padding-bottom: 0.9em;
   width: 100%;
@@ -582,7 +582,7 @@ a {
   transition: all 900ms ease-in-out 0ms;
   position: relative;
   transform: scale(0.01);
-  background: linear-gradient(-8deg, #9356dc 40%, #fdff79);
+  background: linear-gradient(-8deg, #dc6856 40%, #fdff79);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;

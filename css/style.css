@@ -72,12 +72,12 @@ a {
   50% {
     transform: rotate(1turn) scale(1.1);
     border-left: 30px solid #99E2D0;
-    border-right: 30px solid #FF79DA;
+    border-right: 30px solid #fdff79;
   }
   100% {
     transform: rotate(2turn) scale(0.1);
     border-left: 10px solid #99E2D0;
-    border-right: 10px solid #FF79DA;
+    border-right: 10px solid #fdff79;
   }
 }
 @keyframes mouvim {
@@ -87,12 +87,12 @@ a {
   50% {
     transform: rotate(1turn) scale(1.1);
     border-left: 30px solid #99E2D0;
-    border-right: 30px solid #FF79DA;
+    border-right: 30px solid #fdff79;
   }
   100% {
     transform: rotate(2turn) scale(0.1);
     border-left: 10px solid #99E2D0;
-    border-right: 10px solid #FF79DA;
+    border-right: 10px solid #fdff79;
   }
 }
 /* loader apparition arrière plan et disparition */
@@ -199,7 +199,7 @@ a {
   position: relative;
   margin: auto;
   border-left: 10px solid #99E2D0;
-  border-right: 10px solid #FF79DA;
+  border-right: 10px solid #fdff79;
   border-radius: 50%;
   width: 270px;
   height: 270px;
@@ -310,7 +310,7 @@ a {
 .headerbutton {
   /* bouton de commande et bouton d'explo */
   display: inline-block;
-  background: linear-gradient(-5deg, #9356dc 40%, #FF79DA);
+  background: linear-gradient(-5deg, #9356dc 40%, #fdff79);
   padding-top: 0.9em;
   padding-bottom: 0.9em;
   width: 100%;
@@ -582,7 +582,7 @@ a {
   transition: all 900ms ease-in-out 0ms;
   position: relative;
   transform: scale(0.01);
-  background: linear-gradient(-8deg, #9356dc 40%, #FF79DA);
+  background: linear-gradient(-8deg, #9356dc 40%, #fdff79);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
